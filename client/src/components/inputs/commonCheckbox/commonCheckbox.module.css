@@ -1,0 +1,21 @@
+.wrapper {
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.label {
+    color: #374151;
+
+    line-height: 1.5;
+}
+
+.checkbox :global(.MuiSvgIcon-root) {
+    font-size: 1.5rem;
+}
+
+/* Dark Theme */
+
+[data-theme="dark"] .label {
+    color: #e5e7eb;
+}

@@ -1,0 +1,127 @@
+.popupWrapper {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999999;
+
+    padding: 1.5rem;
+
+    overflow-y: auto;
+
+    animation:
+        fadeIn .25s ease;
+}
+
+.leftPlacement {
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 0;
+}
+
+.rightPlacement {
+    justify-content: flex-end;
+    align-items: stretch;
+    padding: 0;
+}
+
+.centerPlacement {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Blur */
+
+.blur {
+    backdrop-filter: blur(10px);
+
+    background:
+        rgba(15, 23, 42, .45);
+}
+
+/* Popup */
+
+.popup {
+    width: 100%;
+
+    animation:
+        popupIn .25s ease;
+}
+
+.leftPanel {
+    max-width: 320px;
+    height: 100%;
+    animation:
+        slideInLeft .25s ease;
+}
+
+.rightPanel {
+    max-width: 320px;
+    height: 100%;
+    animation:
+        slideInRight .25s ease;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popupIn {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+
+        transform: translateX(-24px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+
+        transform: translateX(24px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .popupWrapper {
+        padding: 1rem;
+    }
+}
