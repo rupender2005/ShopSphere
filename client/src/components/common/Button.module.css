@@ -1,0 +1,26 @@
+.button{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary{
+    background-color: var(--primary-color);
+}
+
+.secondary{
+    color: var(--primary-color);
+    background-color: white;
+    border: 1px solid var(--primary-color);
+}
+
+.dangerOutline{
+    color: #ef4444;
+    background-color: white;
+    border: 1px solid #ef4444;
+}

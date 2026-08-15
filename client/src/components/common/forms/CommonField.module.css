@@ -1,0 +1,112 @@
+.fieldWrapper {
+    width: 100%;
+}
+
+.materialField :global(.MuiOutlinedInput-root) {
+    border-radius: 12px;
+
+    background-color: white;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background-color .2s ease;
+}
+
+.materialField :global(.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline) {
+    border-color: #94a3b8;
+}
+
+.materialField :global(.MuiOutlinedInput-root.Mui-error:hover .MuiOutlinedInput-notchedOutline),
+.materialField :global(.MuiOutlinedInput-root.Mui-error.Mui-focused .MuiOutlinedInput-notchedOutline) {
+    border-color: #d32f2f;
+}
+
+.materialField :global(.MuiOutlinedInput-root.Mui-focused:not(.Mui-error) .MuiOutlinedInput-notchedOutline) {
+    border-color: var(--primary-color);
+    border-width: 1.5px;
+}
+
+.materialField :global(.MuiOutlinedInput-root.Mui-focused) {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.materialField :global(.MuiOutlinedInput-input) {
+    padding: 16px 14px;
+
+    color: #111827;
+
+    font-size: 1rem;
+}
+
+.materialField :global(.MuiInputLabel-root) {
+    color: #6b7280;
+}
+
+.materialField :global(.MuiInputLabel-root.Mui-focused:not(.Mui-error)) {
+    color: var(--primary-color);
+}
+
+.materialField :global(.MuiInputLabel-root.Mui-error),
+.materialField :global(.MuiInputLabel-root.Mui-error.Mui-focused) {
+    color: #d32f2f;
+}
+
+.materialField :global(.MuiFormHelperText-root) {
+    margin-left: 2px;
+}
+
+/* Textarea */
+
+.materialField :global(textarea) {
+    resize: vertical;
+}
+
+/* Disabled */
+
+.materialField :global(.Mui-disabled) {
+    background-color: #f9fafb;
+}
+
+/* Dark Theme */
+
+[data-theme="dark"] .materialField :global(.MuiOutlinedInput-root) {
+    background-color: #1f2937;
+}
+
+[data-theme="dark"] .materialField :global(.MuiOutlinedInput-input) {
+    color: #f9fafb;
+}
+
+[data-theme="dark"] .materialField :global(.MuiInputLabel-root) {
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .materialField :global(.MuiOutlinedInput-notchedOutline) {
+    border-color: #374151;
+}
+
+/* Autofill */
+
+.materialField :global(.MuiOutlinedInput-input:-webkit-autofill) {
+    -webkit-box-shadow: 0 0 0 1000px rgba(124, 58, 237, 0.05) inset !important;
+    -webkit-text-fill-color: #111827 !important;
+    border-radius: 12px;
+}
+
+[data-theme="dark"] .materialField :global(.MuiOutlinedInput-input:-webkit-autofill) {
+    -webkit-box-shadow: 0 0 0 1000px rgba(124, 58, 237, 0.15) inset !important;
+    -webkit-text-fill-color: #f9fafb !important;
+    border-radius: 12px;
+}
+
+/* Hide Number Arrows */
+.materialField :global(input[type="number"]::-webkit-outer-spin-button),
+.materialField :global(input[type="number"]::-webkit-inner-spin-button) {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.materialField :global(input[type="number"]) {
+    -moz-appearance: textfield;
+}

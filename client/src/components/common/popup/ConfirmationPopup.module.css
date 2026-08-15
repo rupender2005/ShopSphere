@@ -1,0 +1,43 @@
+.container {
+    width: 100%;
+    min-width: 320px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.cancelBtn {
+    background-color: transparent;
+    border: 1px solid #e5e7eb;
+    color: #4b5563;
+    transition: all 0.2s;
+}
+
+.cancelBtn:hover:not(:disabled) {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+.confirmBtn {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    transition: all 0.2s;
+}
+
+.confirmBtn:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+.destructiveBtn {
+    background-color: #ef4444;
+    border: 1px solid #ef4444;
+    transition: all 0.2s;
+}
+
+.destructiveBtn:hover:not(:disabled) {
+    background-color: #dc2626;
+    border-color: #dc2626;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

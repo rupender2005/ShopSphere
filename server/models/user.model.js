@@ -38,8 +38,21 @@ const userSchema = new mongoose.Schema(
       select: false,
     },
 
+    googleId: {
+      type: String,
+      unique: true,
+      sparse: true,
+      trim: true,
+      select: false,
+    },
+
     // Forgot/reset password support
     resetPasswordToken: {
+      type: String,
+      select: false,
+    },
+
+    resetPasswordOtp: {
       type: String,
       select: false,
     },
@@ -97,8 +110,6 @@ const userSchema = new mongoose.Schema(
     timestamps: true,
   },
 );
-
-userSchema.index({ email: 1 });
 
 const User = mongoose.model("User", userSchema);
 

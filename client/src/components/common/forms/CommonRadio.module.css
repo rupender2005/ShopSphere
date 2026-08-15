@@ -1,0 +1,17 @@
+.wrapper {
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio {
+  padding: 8px !important;
+}
+
+.label {
+  color: var(--text-color);
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,2 +1,14 @@
 # ShopSphere
-🛒 ShopSphere A modern full-stack e-commerce platform built with the MERN stack. Frontend: React (Vite), Tailwind CSS, Shadcn UI, Zustand. Backend: Node.js, Express, MongoDB. Features: Secure JWT auth, Razorpay checkout, Cloudinary uploads, persistent cart, and a complete admin dashboard.
+
+ShopSphere is a full-stack MERN ecommerce application.
+
+## Stack
+
+- Client: React 19 + Vite + Material UI + Zustand + React Router
+- Server: Node.js + Express + MongoDB/Mongoose
+- Authentication: JWT + Google Identity Services
+- Payments: Razorpay
+- Images: Cloudinary
+- Email: Nodemailer/Gmail SMTP
+
+See `client/.env.example` and `server/.env.example` for required environment variables.
