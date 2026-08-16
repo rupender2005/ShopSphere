@@ -184,7 +184,7 @@ const useAuthStore = create((set) => ({
     set({ isLoading: true, error: null });
     try {
       await authService.logout();
-    } catch (_) {
+    } catch {
       // Local logout must still complete even if the backend request fails.
     }
 

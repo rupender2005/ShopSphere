@@ -13,7 +13,6 @@ import Typography from "@mui/material/Typography";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import LogoutIcon from "@mui/icons-material/Logout";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 
 import useAuthStore from "../../store/authStore";
 

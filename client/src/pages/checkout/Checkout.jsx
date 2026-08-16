@@ -17,12 +17,10 @@ import useCartStore from "../../store/cartStore";
 import useAuthStore from "../../store/authStore";
 import orderService from "../../services/orderService";
 import paymentService from "../../services/paymentService";
-import userService from "../../services/userService";
 import env from "../../config/env";
 const Checkout = () => {
   const { cart, fetchCart } = useCartStore(),
     user = useAuthStore((s) => s.user),
-    updateUser = useAuthStore((s) => s.updateUser),
     nav = useNavigate();
   const [a, setA] = useState({
       name: user?.name || "",
@@ -38,9 +36,7 @@ const Checkout = () => {
     [error, setError] = useState("");
   useEffect(() => {
     if (!cart) fetchCart().catch(() => {});
-    if (userService && user && !user.address?.street) {
-    }
-  }, [cart, fetchCart, user]);
+  }, [cart, fetchCart]);
   if (!cart?.items?.length)
     return (
       <Container sx={{ py: 8 }}>

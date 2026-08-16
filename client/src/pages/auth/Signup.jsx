@@ -34,7 +34,7 @@ const Signup = () => {
     setGoogleError("");
     try {
       await register({ name, email, password });
-    } catch (_) {}
+    } catch {}
   };
 
   const handleGoogleSuccess = async (credential) => {

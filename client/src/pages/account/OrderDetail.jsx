@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   Alert,
   Button,
@@ -12,8 +12,7 @@ import {
 import orderService from "../../services/orderService";
 import Loader from "../../components/common/Loader";
 const OrderDetail = () => {
-  const { id } = useParams(),
-    nav = useNavigate();
+  const { id } = useParams();
   const [o, setO] = useState(null),
     [loading, setLoading] = useState(true),
     [error, setError] = useState("");

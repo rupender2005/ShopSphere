@@ -33,7 +33,7 @@ const Login = () => {
     setGoogleError("");
     try {
       await login({ email, password });
-    } catch (_) {}
+    } catch {}
   };
 
   const handleGoogleSuccess = async (credential) => {

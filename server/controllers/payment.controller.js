@@ -1,5 +1,5 @@
 const crypto = require("crypto");
-const razorpay = require("../config/razorpay");
+const { getRazorpay } = require("../config/razorpay");
 
 const { Order } = require("../models/order.model");
 const { ResponseHandler } = require("../utils/responseHandler");
@@ -35,11 +35,23 @@ const createPaymentOrder = async (req, res) => {
       return ResponseHandler(res, 400, false, "Order is already paid");
     }
 
+    const amount = Math.round(Number(order.totalAmount) * 100);
+
+    if (!Number.isFinite(amount) || amount <= 0) {
+      return ResponseHandler(res, 400, false, "Invalid order amount");
+    }
+
+    const razorpay = getRazorpay();
+
     const razorpayOrder = await razorpay.orders.create({
-      amount: Math.round(order.totalAmount * 100),
+      amount,
       currency: "INR",
       receipt: order._id.toString(),
     });
+
+    if (!razorpayOrder?.id) {
+      throw new Error("Razorpay did not return an order ID");
+    }
 
     order.razorpayOrderId = razorpayOrder.id;
 
@@ -57,11 +69,28 @@ const createPaymentOrder = async (req, res) => {
       },
     );
   } catch (error) {
+    console.error("Error in server > controllers > payment", {
+      message: error?.message,
+      code: error?.code,
+      statusCode: error?.statusCode,
+      description: error?.description,
+      error: error?.error,
+      response: error?.response?.data,
+      stack: error?.stack,
+    });
+
+    if (error?.code === "RAZORPAY_NOT_CONFIGURED") {
+      return ResponseHandler(res, 503, false, error.message);
+    }
+
     return ResponseHandler(
       res,
-      500,
+      502,
       false,
-      "Error in server > controllers > payment",
+      error?.description ||
+        error?.error?.description ||
+        error?.message ||
+        "Razorpay order creation failed",
     );
   }
 };
@@ -93,6 +122,17 @@ const verifyPayment = async (req, res) => {
     if (order.razorpayOrderId !== razorpayOrderId) {
       return ResponseHandler(res, 400, false, "Invalid Razorpay order ID");
     }
+
+    if (!process.env.RAZORPAY_KEY_SECRET) {
+      return ResponseHandler(
+        res,
+        503,
+        false,
+        "Razorpay is not configured. Add RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET to server/.env.",
+      );
+    }
+
+    const razorpay = getRazorpay();
 
     const generatedSignature = crypto
       .createHmac("sha256", process.env.RAZORPAY_KEY_SECRET)
@@ -128,7 +168,12 @@ const verifyPayment = async (req, res) => {
       Number(payment.amount) !== expectedAmount ||
       payment.currency !== "INR"
     ) {
-      return ResponseHandler(res, 400, false, "Payment details do not match the order");
+      return ResponseHandler(
+        res,
+        400,
+        false,
+        "Payment details do not match the order",
+      );
     }
 
     if (payment.status !== "captured" && payment.captured !== true) {
@@ -141,7 +186,12 @@ const verifyPayment = async (req, res) => {
     }
 
     if (order.paymentStatus === "Paid") {
-      return ResponseHandler(res, 400, false, "Payment has already been verified");
+      return ResponseHandler(
+        res,
+        400,
+        false,
+        "Payment has already been verified",
+      );
     }
 
     order.razorpayPaymentId = razorpayPaymentId;
@@ -160,6 +210,11 @@ const verifyPayment = async (req, res) => {
       order,
     );
   } catch (error) {
+    if (error.code === "RAZORPAY_NOT_CONFIGURED") {
+      return ResponseHandler(res, 503, false, error.message);
+    }
+
+    console.error("Error in server > controllers > payment", error.message);
     return ResponseHandler(
       res,
       500,

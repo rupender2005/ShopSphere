@@ -1,8 +1,11 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 const dotenv = require("dotenv");
-dotenv.config();
+
+// Always load the server-local .env, even when the server is started from the project root.
+dotenv.config({ path: path.join(__dirname, ".env") });
 
 const { connectDB } = require("./config/db");
 const { ResponseHandler } = require("./utils/responseHandler");

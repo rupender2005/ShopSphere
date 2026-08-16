@@ -49,22 +49,53 @@
 - Forgot-password UI now reflects the actual OTP workflow supported by the server.
 - Reset flow preserves the existing ShopSphere visual direction rather than replacing the application design.
 - Existing featured-product/category/product-card UI was preserved while keeping broken references and flows from failing.
+- Product search now resets pagination before issuing the query and displays a meaningful error/empty state instead of silently swallowing failed API requests.
+- Removed unused client imports and inert checkout code so the configured linter completes without warnings.
 
 ## Dependency / installation checks
 
 - The supplied archive contained `node_modules` artifacts with restrictive filesystem permissions. Those artifacts are excluded from the final ZIP.
 - Existing `package.json` and lockfiles are preserved.
-- A clean `npm ci` could not be completed in this execution environment because dependency installation did not complete successfully from the available package/network environment.
+- The environment's global `npm` launcher is broken, so checks were run using the bundled Node runtime and the project's installed dependencies. `package.json` and lockfiles remain unchanged apart from the client test script.
 
 ## Testing performed
 
-- `node --check` passed for all 50 server JavaScript files.
-- Static frontend/backend endpoint inventory was inspected.
-- Environment-example files and lockfiles were checked.
-- Public favicon asset/reference was checked.
-- Final archive was created without `.git`, `node_modules`, logs, temporary files, or `.env` secrets.
+- Server startup completed successfully against the configured local MongoDB database.
+- Verified `GET /`, public products/categories endpoints, unknown route handling, protected-route rejection, and invalid-ID validation responses.
+- `node --test tests/products-page.contract.test.mjs` passed in `client/`.
+- `oxlint` completed with no warnings after cleanup.
+- `vite build` completed successfully in `client/`.
+- Environment-example files, lockfiles, and public favicon/reference were inspected.
+- Created and inspected `ShopSphere-corrected.zip` (206 entries); it excludes `.env` files, `.git`, `node_modules`, build output, logs, and temporary files.
 
 ## Remaining non-critical limitations
 
-- Full browser/Vite production-build testing was not possible in this environment because a clean frontend dependency installation could not be completed.
-- Live MongoDB, Gmail SMTP, Google OAuth, Cloudinary, and Razorpay transactions require the project's real environment credentials/services and were not executed against production/test accounts here.
+- Interactive browser automation could not start because the local browser runtime lacks permission to inspect a Windows profile path.
+- Live Gmail SMTP, Google OAuth, Cloudinary, and Razorpay transactions were not executed against production/test accounts. The server's configured MongoDB connection was verified locally.
+
+## Latest runtime fixes (2026-08-16)
+
+- Fixed server-local environment loading so `server/.env` is loaded regardless of whether the server is started from `server/` or the project root.
+- Fixed Razorpay boot behavior: missing `RAZORPAY_KEY_ID` / `RAZORPAY_KEY_SECRET` no longer crashes the entire Express process during route/controller import. Razorpay is initialized lazily and payment requests return a clear `503` configuration error when credentials are missing.
+- Removed the unused Razorpay import from the order controller so ordinary order APIs do not initialize the payment provider.
+- Kept server-side Razorpay signature verification and provider-side payment verification intact before an order can become paid.
+- Normalized placeholder client environment values so `your-*` example values are treated as unconfigured instead of being sent to Google/Razorpay.
+- The uploaded source ZIP intentionally contains no real `.env` credentials. Create `server/.env` and `client/.env` locally from the provided examples.
+
+### Google Sign-In configuration
+
+`client/.env` and `server/.env` must use the **same Google OAuth Web Client ID**:
+
+- `client/.env`: `VITE_GOOGLE_CLIENT_ID=<same-web-client-id>`
+- `server/.env`: `GOOGLE_CLIENT_ID=<same-web-client-id>`
+
+For local development, the Google OAuth client must allow `http://localhost:5173` as an authorized JavaScript origin. The existing backend endpoint is `POST /api/auth/google`; a `401` from that endpoint means the request reached the backend and Google credential verification failed, rather than the route being missing.
+
+### Razorpay configuration
+
+For Razorpay checkout, configure both server secrets and the browser-safe key:
+
+- `server/.env`: `RAZORPAY_KEY_ID=<key-id>` and `RAZORPAY_KEY_SECRET=<key-secret>`
+- `client/.env`: `VITE_RAZORPAY_KEY_ID=<same-key-id>`
+
+Never put `RAZORPAY_KEY_SECRET` in the client environment.

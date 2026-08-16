@@ -2,7 +2,6 @@ const { Order } = require("../models/order.model");
 const { Cart } = require("../models/cart.model");
 const { Product } = require("../models/product.model");
 const { ResponseHandler } = require("../utils/responseHandler");
-const razorpay = require("../config/razorpay");
 
 // Create Order
 const createOrder = async (req, res) => {
