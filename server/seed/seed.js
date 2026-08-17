@@ -680,6 +680,48 @@ const getProductImagePaths = (category, productName) => {
 };
 
 /* =========================================================
+   CONSOLE LOGGER
+========================================================= */
+
+const LOG = {
+  line: "----------------------------------------",
+
+  header: (title) => {
+    console.log("\n========================================");
+    console.log(`   ${title}`);
+    console.log("========================================\n");
+  },
+
+  section: (title) => {
+    console.log(`\n--- ${title} ---\n`);
+  },
+
+  success: (message) => {
+    console.log(`✓ ${message}`);
+  },
+
+  info: (message) => {
+    console.log(`→ ${message}`);
+  },
+
+  upload: (message) => {
+    console.log(`↑ ${message}`);
+  },
+
+  warning: (message) => {
+    console.warn(`⚠ ${message}`);
+  },
+
+  error: (message) => {
+    console.error(`✖ ${message}`);
+  },
+
+  summary: (label, value) => {
+    console.log(`  ${label.padEnd(26)}: ${value}`);
+  },
+};
+
+/* =========================================================
    CLOUDINARY
 ========================================================= */
 
@@ -700,7 +742,7 @@ const uploadImageToCloudinary = async ({ filePath, folder, publicId }) => {
 ========================================================= */
 
 const uploadCategoryImages = async () => {
-  console.log("\nUploading category images...\n");
+  LOG.section("Category images");
 
   const categoryImageUrls = new Map();
 
@@ -709,7 +751,7 @@ const uploadCategoryImages = async () => {
 
     if (!imagePath) {
       if (ALLOW_MISSING_IMAGES) {
-        console.warn(`⚠ Category image missing: ${category.name}`);
+        LOG.warning(`Category image missing → ${category.name}`);
 
         categoryImageUrls.set(category.name, "");
 
@@ -724,7 +766,7 @@ const uploadCategoryImages = async () => {
       );
     }
 
-    console.log(`Uploading category image: ${category.name}`);
+    LOG.upload(`${category.name} → ${path.basename(imagePath)}`);
 
     const url = await uploadImageToCloudinary({
       filePath: imagePath,
@@ -733,6 +775,8 @@ const uploadCategoryImages = async () => {
     });
 
     categoryImageUrls.set(category.name, url);
+
+    LOG.success(`Uploaded category → ${category.name}`);
   }
 
   return categoryImageUrls;
@@ -743,7 +787,7 @@ const uploadCategoryImages = async () => {
 ========================================================= */
 
 const uploadProductImages = async () => {
-  console.log("\nUploading product images...\n");
+  LOG.section("Product images");
 
   // FIX: keyed by `category.slug::productSlug` instead of bare
   // product name, so products with the same name in different
@@ -751,6 +795,8 @@ const uploadProductImages = async () => {
   const productImageMap = new Map();
 
   for (const category of categoryDefinitions) {
+    console.log(`\n[ ${category.name} ]`);
+
     for (const [productName] of category.products) {
       const imagePaths = getProductImagePaths(category, productName);
 
@@ -758,7 +804,9 @@ const uploadProductImages = async () => {
 
       if (imagePaths.length === 0) {
         if (ALLOW_MISSING_IMAGES) {
-          console.warn(`⚠ Product images missing: ${productName}`);
+          LOG.warning(
+            `Product images missing → ${category.name} → ${productName}`,
+          );
 
           productImageMap.set(key, []);
 
@@ -778,8 +826,8 @@ const uploadProductImages = async () => {
       for (const imagePath of imagePaths) {
         const extensionlessName = path.parse(imagePath).name;
 
-        console.log(
-          `Uploading: ${category.name} → ${path.basename(imagePath)}`,
+        LOG.upload(
+          `${category.name} → ${productName} → ${path.basename(imagePath)}`,
         );
 
         const url = await uploadImageToCloudinary({
@@ -799,13 +847,12 @@ const uploadProductImages = async () => {
 
   return productImageMap;
 };
-
 /* =========================================================
    CATEGORY DATABASE
 ========================================================= */
 
 const seedCategories = async (categoryImageUrls) => {
-  console.log("\nSeeding categories...\n");
+  LOG.section("Database → Categories");
 
   const operations = categoryDefinitions.map((category) => ({
     updateOne: {
@@ -833,9 +880,9 @@ const seedCategories = async (categoryImageUrls) => {
     ordered: true,
   });
 
-  console.log(`Categories inserted: ${result.upsertedCount}`);
+  LOG.success(`Categories inserted → ${result.upsertedCount}`);
 
-  console.log(`Categories modified: ${result.modifiedCount}`);
+  LOG.success(`Categories modified → ${result.modifiedCount}`);
 
   const savedCategories = await Category.find({
     name: {
@@ -853,7 +900,7 @@ const seedCategories = async (categoryImageUrls) => {
 ========================================================= */
 
 const seedProducts = async ({ categoryMap, productImageMap }) => {
-  console.log("\nPreparing products...\n");
+  LOG.section("Database → Products");
 
   const operations = [];
 
@@ -935,15 +982,15 @@ const seedProducts = async ({ categoryMap, productImageMap }) => {
     }
   }
 
-  console.log(`Total products prepared: ${productNumber}`);
+  LOG.info(`Products prepared → ${productNumber}`);
 
   const result = await Product.bulkWrite(operations, {
     ordered: false,
   });
 
-  console.log(`Products inserted: ${result.upsertedCount}`);
+  LOG.success(`Products inserted → ${result.upsertedCount}`);
 
-  console.log(`Products modified: ${result.modifiedCount}`);
+  LOG.success(`Products modified → ${result.modifiedCount}`);
 };
 
 /* =========================================================
@@ -986,27 +1033,25 @@ const validateImageFolders = () => {
 
 const seedDatabase = async () => {
   try {
-    console.log("\n========================================");
-
-    console.log("       ShopSphere Database Seed");
-
-    console.log("========================================\n");
+    LOG.header("ShopSphere Database Seed");
 
     ensureDirectory(CATEGORY_IMAGES_DIR);
 
     ensureDirectory(PRODUCT_IMAGES_DIR);
 
-    console.log("Validating local image files...");
+    LOG.info("Validating local image files...");
 
     validateImageFolders();
 
-    console.log("Image validation passed.");
+    LOG.success("Image validation passed.");
 
-    console.log("\nConnecting to MongoDB...");
+    LOG.info("Connecting to MongoDB...");
 
     await connectDB();
 
-    console.log("Checking Cloudinary configuration...");
+    LOG.success("MongoDB connected.");
+
+    LOG.info("Checking Cloudinary configuration...");
 
     if (
       !process.env.CLOUDINARY_CLOUD_NAME ||
@@ -1016,7 +1061,7 @@ const seedDatabase = async () => {
       throw new Error("Cloudinary credentials are missing. Check server/.env.");
     }
 
-    console.log("Cloudinary configuration found.");
+    LOG.success("Cloudinary configuration found.");
 
     /*
      * Upload category images first.
@@ -1066,13 +1111,15 @@ const seedDatabase = async () => {
 
     console.log("     ShopSphere Seed Completed");
 
-    console.log("========================================");
+    console.log("========================================\n");
 
-    console.log(`Categories: ${totalCategories}`);
+    LOG.summary("Categories", totalCategories);
 
-    console.log(`Products:   ${totalProducts}`);
+    LOG.summary("Products", totalProducts);
 
-    console.log("Images:     Uploaded to Cloudinary");
+    LOG.summary("Images", "Uploaded to Cloudinary");
+
+    LOG.success("Database seed completed successfully.");
 
     console.log("========================================\n");
   } catch (error) {
