@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const dns = require("dns");
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
 const dotenv = require("dotenv");
 
@@ -27,7 +29,9 @@ const app = express();
 const PORT = Number(process.env.PORT) || 5000;
 
 if (!process.env.JWT_SECRET) {
-  console.error("JWT_SECRET is required. Add it to server/.env before starting ShopSphere.");
+  console.error(
+    "JWT_SECRET is required. Add it to server/.env before starting ShopSphere.",
+  );
   process.exit(1);
 }
 
@@ -87,7 +91,9 @@ const startServer = async () => {
   if (process.env.EMAIL_USER && process.env.EMAIL_PASSWORD) {
     transporter.verify((error) => {
       if (error) {
-        console.error("Email configuration check failed. Forgot-password emails will not be deliverable until EMAIL_USER and EMAIL_PASSWORD are configured correctly.");
+        console.error(
+          "Email configuration check failed. Forgot-password emails will not be deliverable until EMAIL_USER and EMAIL_PASSWORD are configured correctly.",
+        );
         console.error(error.message);
         return;
       }
@@ -95,7 +101,9 @@ const startServer = async () => {
       console.log("Email transporter verified successfully.");
     });
   } else {
-    console.warn("EMAIL_USER and EMAIL_PASSWORD are not configured. Email features are disabled until SMTP credentials are added.");
+    console.warn(
+      "EMAIL_USER and EMAIL_PASSWORD are not configured. Email features are disabled until SMTP credentials are added.",
+    );
   }
 
   app.listen(PORT, () => {
