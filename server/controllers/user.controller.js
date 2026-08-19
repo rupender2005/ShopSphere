@@ -23,31 +23,59 @@ const getUser = async (req, res) => {
 };
 
 // Update User
+// Update User
 const updateUser = async (req, res) => {
   try {
     const { name, phone, avatar, address } = req.body;
 
-    const user = await User.findById(req.user._id);
+    const updateData = {};
 
-    if (!user) {
+    if (name !== undefined) {
+      updateData.name = name;
+    }
+
+    if (phone !== undefined) {
+      updateData.phone = phone;
+    }
+
+    if (avatar !== undefined) {
+      updateData.avatar = avatar;
+    }
+
+    if (address !== undefined) {
+      if (address.street !== undefined) {
+        updateData["address.street"] = address.street;
+      }
+
+      if (address.city !== undefined) {
+        updateData["address.city"] = address.city;
+      }
+
+      if (address.state !== undefined) {
+        updateData["address.state"] = address.state;
+      }
+
+      if (address.postalCode !== undefined) {
+        updateData["address.postalCode"] = address.postalCode;
+      }
+
+      if (address.country !== undefined) {
+        updateData["address.country"] = address.country;
+      }
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      req.user._id,
+      { $set: updateData },
+      {
+        new: true,
+        runValidators: true,
+      },
+    ).select("-password");
+
+    if (!updatedUser) {
       return ResponseHandler(res, 404, false, "User not found");
     }
-
-    user.name = name ?? user.name;
-    user.phone = phone ?? user.phone;
-    user.avatar = avatar ?? user.avatar;
-
-    if (address) {
-      user.address.street = address.street ?? user.address.street;
-      user.address.city = address.city ?? user.address.city;
-      user.address.state = address.state ?? user.address.state;
-      user.address.postalCode = address.postalCode ?? user.address.postalCode;
-      user.address.country = address.country ?? user.address.country;
-    }
-
-    await user.save();
-
-    const updatedUser = await User.findById(req.user._id).select("-password");
 
     return ResponseHandler(
       res,
@@ -57,6 +85,8 @@ const updateUser = async (req, res) => {
       updatedUser,
     );
   } catch (error) {
+    console.error("Error in server > controllers > user:", error);
+
     return ResponseHandler(
       res,
       500,
