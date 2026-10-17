@@ -177,6 +177,7 @@ const AdminSidebar = ({ isOpen, onClose }) => {
           "& .MuiDrawer-paper": {
             width: DRAWER_WIDTH,
             boxSizing: "border-box",
+            overflowX: "hidden",
             borderRight: 1,
             borderColor: "divider",
           },
@@ -197,6 +198,7 @@ const AdminSidebar = ({ isOpen, onClose }) => {
         PaperProps={{
           sx: {
             width: DRAWER_WIDTH,
+            overflowX: "hidden",
           },
         }}
       >

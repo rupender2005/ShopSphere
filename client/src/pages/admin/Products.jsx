@@ -8,6 +8,7 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
+  Pagination,
   Paper,
   Stack,
   Typography,
@@ -30,16 +31,26 @@ const AdminProducts = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [reloadKey, setReloadKey] = useState(0);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalProducts, setTotalProducts] = useState(0);
 
   const load = useCallback(async () => {
     setLoading(true);
     setError("");
     try {
       const [productsResponse, categoriesResponse] = await Promise.all([
-        productService.getProducts({ limit: 50 }),
+        productService.getProducts({ page, limit: 15 }),
         categoryService.getCategories(),
       ]);
       setProducts(productsResponse.data?.products || []);
+      const nextTotalPages = Math.max(
+        1,
+        productsResponse.data?.totalPages || 1,
+      );
+      setTotalPages(nextTotalPages);
+      setTotalProducts(productsResponse.data?.totalProducts || 0);
+      if (page > nextTotalPages) setPage(nextTotalPages);
       setCategories(
         Array.isArray(categoriesResponse.data) ? categoriesResponse.data : [],
       );
@@ -49,7 +60,7 @@ const AdminProducts = () => {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [page]);
 
   useEffect(() => {
     load().catch(() => {});
@@ -73,7 +84,11 @@ const AdminProducts = () => {
 
   const saveProduct = async () => {
     setOpen(false);
-    await load();
+    if (!edit && page !== 1) {
+      setPage(1);
+    } else {
+      await load();
+    }
     setSuccess(edit ? "Product updated." : "Product added.");
   };
 
@@ -102,6 +117,10 @@ const AdminProducts = () => {
         />
       ) : (
         <>
+          <Typography color="text.secondary" sx={{ mb: 2 }}>
+            Showing {totalProducts === 0 ? 0 : (page - 1) * 15 + 1}–
+            {Math.min(page * 15, totalProducts)} of {totalProducts} products
+          </Typography>
           {success && (
             <Alert severity="success" sx={{ mb: 2 }} onClose={() => setSuccess("")}>
               {success}
@@ -158,6 +177,19 @@ const AdminProducts = () => {
               ))
             )}
           </Box>
+          {totalPages > 1 && (
+            <Stack alignItems="center" sx={{ mt: 3 }}>
+              <Pagination
+                count={totalPages}
+                page={page}
+                onChange={(_, nextPage) => setPage(nextPage)}
+                color="primary"
+                shape="rounded"
+                disabled={loading}
+                aria-label="Admin product pages"
+              />
+            </Stack>
+          )}
         </>
       )}
       <Dialog
