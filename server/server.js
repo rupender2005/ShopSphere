@@ -7,13 +7,6 @@ dotenv.config({
   path: path.join(__dirname, ".env"),
 });
 
-app.use(
-  cors({
-    origin: "https://shopsphere-tan.vercel.app",
-    credentials: true,
-  }),
-);
-
 const { connectDB } = require("./config/db");
 const { ResponseHandler } = require("./utils/responseHandler");
 const { transporter } = require("./config/nodemailer");
