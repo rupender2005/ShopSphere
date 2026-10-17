@@ -64,9 +64,23 @@ const OrderDetail = () => {
         </Stack>
       ))}
       <Divider sx={{ my: 2 }} />
-      <Typography>Subtotal: ₹{Number(o.subtotal).toFixed(2)}</Typography>
-      <Typography>Shipping: ₹{Number(o.shippingFee).toFixed(2)}</Typography>
-      <Typography>Tax: ₹{Number(o.tax).toFixed(2)}</Typography>
+      <Typography>
+        Items subtotal: ₹{Number(o.subtotal).toFixed(2)}
+      </Typography>
+      <Typography>
+        Marketplace fee: ₹{Number(o.marketplaceFee || 0).toFixed(2)}
+      </Typography>
+      <Typography>
+        Delivery: {Number(o.shippingFee) === 0
+          ? "FREE"
+          : `₹${Number(o.shippingFee).toFixed(2)}`}
+      </Typography>
+      {Number(o.codFee) > 0 && (
+        <Typography>
+          Cash on Delivery fee: ₹{Number(o.codFee).toFixed(2)}
+        </Typography>
+      )}
+      <Typography>GST: ₹{Number(o.tax).toFixed(2)}</Typography>
       <Typography variant="h5" fontWeight={800} mt={2}>
         Total: ₹{Number(o.totalAmount).toFixed(2)}
       </Typography>

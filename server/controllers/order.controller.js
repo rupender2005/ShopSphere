@@ -56,10 +56,13 @@ const createOrder = async (req, res) => {
     }
 
     const shippingFee = subtotal >= 500 ? 0 : 50;
-
-    const tax = subtotal * 0.18;
-
-    const totalAmount = subtotal + shippingFee + tax;
+    const marketplaceFee = 5;
+    const selectedPaymentMethod = paymentMethod || "Razorpay";
+    const codFee = selectedPaymentMethod === "COD" ? 25 : 0;
+    const tax = Number((subtotal * 0.18).toFixed(2));
+    const totalAmount = Number(
+      (subtotal + shippingFee + marketplaceFee + codFee + tax).toFixed(2),
+    );
 
     const order = await Order.create({
       user: req.user._id,
@@ -67,9 +70,11 @@ const createOrder = async (req, res) => {
       shippingAddress,
       subtotal,
       shippingFee,
+      marketplaceFee,
+      codFee,
       tax,
       totalAmount,
-      paymentMethod: paymentMethod || "Razorpay",
+      paymentMethod: selectedPaymentMethod,
     });
 
     for (const item of cart.items) {

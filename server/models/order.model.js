@@ -112,6 +112,20 @@ const orderSchema = new mongoose.Schema(
       default: 0,
     },
 
+    marketplaceFee: {
+      type: Number,
+      required: true,
+      min: 0,
+      default: 0,
+    },
+
+    codFee: {
+      type: Number,
+      required: true,
+      min: 0,
+      default: 0,
+    },
+
     tax: {
       type: Number,
       required: true,

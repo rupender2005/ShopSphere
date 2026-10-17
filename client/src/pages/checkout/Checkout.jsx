@@ -12,6 +12,7 @@ import {
   TextField,
   Typography,
   Alert,
+  Divider,
 } from "@mui/material";
 import useCartStore from "../../store/cartStore";
 import useAuthStore from "../../store/authStore";
@@ -43,6 +44,15 @@ const Checkout = () => {
         <Typography variant="h4">Your cart is empty.</Typography>
       </Container>
     );
+  const subtotal = Number(cart.totalPrice) || 0;
+  const marketplaceFee = 5;
+  const deliveryFee = subtotal >= 500 ? 0 : 50;
+  const codFee = method === "COD" ? 25 : 0;
+  const tax = Number((subtotal * 0.18).toFixed(2));
+  const total = Number(
+    (subtotal + marketplaceFee + deliveryFee + codFee + tax).toFixed(2),
+  );
+  const money = (amount) => `₹${Number(amount).toFixed(2)}`;
   const submit = async (e) => {
     e.preventDefault();
     setBusy(true);
@@ -157,21 +167,59 @@ const Checkout = () => {
           </FormControl>
         </Box>
         <Box
-          sx={{ p: 3, borderRadius: 3, boxShadow: 1, height: "fit-content" }}
+          sx={{
+            p: 3,
+            borderRadius: 3,
+            boxShadow: 1,
+            height: "fit-content",
+            position: { md: "sticky" },
+            top: { md: 24 },
+          }}
         >
-          <Stack direction="row" justifyContent="space-between" mb={2}>
-            <Typography>Items</Typography>
-            <Typography>{cart.totalItems}</Typography>
+          <Stack direction="row" justifyContent="space-between" mb={1.5}>
+            <Typography>Items ({cart.totalItems})</Typography>
+            <Typography>{money(subtotal)}</Typography>
           </Stack>
-          <Stack direction="row" justifyContent="space-between" mb={3}>
-            <Typography variant="h6">Subtotal</Typography>
-            <Typography variant="h6">
-              ₹{Number(cart.totalPrice).toFixed(2)}
+          <Stack direction="row" justifyContent="space-between" mb={1.5}>
+            <Typography>Marketplace fee</Typography>
+            <Typography>{money(marketplaceFee)}</Typography>
+          </Stack>
+          <Stack direction="row" justifyContent="space-between" mb={1.5}>
+            <Typography>Delivery</Typography>
+            <Typography color={deliveryFee === 0 ? "success.main" : undefined}>
+              {deliveryFee === 0 ? "FREE" : money(deliveryFee)}
+            </Typography>
+          </Stack>
+          {method === "COD" && (
+            <Stack direction="row" justifyContent="space-between" mb={1.5}>
+              <Typography>Cash on Delivery fee</Typography>
+              <Typography>{money(codFee)}</Typography>
+            </Stack>
+          )}
+          <Stack direction="row" justifyContent="space-between" mb={2}>
+            <Typography>GST (18%)</Typography>
+            <Typography>{money(tax)}</Typography>
+          </Stack>
+          <Divider sx={{ mb: 2 }} />
+          <Stack direction="row" justifyContent="space-between" mb={2.5}>
+            <Typography variant="h6" fontWeight={800}>
+              Order total
+            </Typography>
+            <Typography variant="h6" fontWeight={800}>
+              {money(total)}
             </Typography>
           </Stack>
           <Button type="submit" fullWidth variant="contained" disabled={busy}>
             {busy ? "Processing…" : "Place order"}
           </Button>
+          <Typography
+            variant="caption"
+            color="text.secondary"
+            display="block"
+            mt={1.5}
+          >
+            Delivery is free on items worth ₹500 or more. COD includes a ₹25 handling fee.
+          </Typography>
         </Box>
       </Box>
     </Container>
