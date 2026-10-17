@@ -58,6 +58,18 @@ const productSchema = new mongoose.Schema(
       default: "",
     },
 
+    imageAttributions: {
+      type: [
+        {
+          imageNumber: { type: Number, required: true },
+          photographer: { type: String, required: true },
+          photographerUrl: { type: String, default: "" },
+          photoUrl: { type: String, default: "" },
+        },
+      ],
+      default: [],
+    },
+
     rating: {
       type: Number,
       default: 0,

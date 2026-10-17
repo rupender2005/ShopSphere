@@ -261,6 +261,7 @@ const updateProduct = async (req, res) => {
 
       product.images = imageUrls;
       product.thumbnail = imageUrls[0];
+      product.imageAttributions = [];
     }
 
     await product.save();

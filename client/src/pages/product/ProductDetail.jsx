@@ -139,24 +139,35 @@ const ProductDetail = () => {
             gap: { xs: 4, md: 6 },
           }}
         >
-          <Box
-            component="img"
-            src={
-              product.thumbnail ||
-              product.images?.[0] ||
-              "https://placehold.co/700x700?text=ShopSphere"
-            }
-            alt={product.name}
-            sx={{
-              width: "100%",
-              aspectRatio: "1",
-              objectFit: "cover",
-              borderRadius: 3,
-              border: "1px solid",
-              borderColor: "divider",
-              bgcolor: "background.paper",
-            }}
-          />
+          <Box>
+            <Box
+              component="img"
+              src={
+                product.thumbnail ||
+                product.images?.[0] ||
+                "https://placehold.co/700x700?text=ShopSphere"
+              }
+              alt={product.name}
+              sx={{
+                width: "100%",
+                aspectRatio: "1",
+                objectFit: "cover",
+                borderRadius: 3,
+                border: "1px solid",
+                borderColor: "divider",
+                bgcolor: "background.paper",
+              }}
+            />
+            {product.imageAttributions?.[0] && (
+              <Typography variant="caption" color="text.secondary" sx={{ display: "block", mt: 1 }}>
+                Photo by{" "}
+                <a href={product.imageAttributions[0].photoUrl} target="_blank" rel="noreferrer">
+                  {product.imageAttributions[0].photographer}
+                </a>{" "}
+                on <a href="https://www.pexels.com" target="_blank" rel="noreferrer">Pexels</a>
+              </Typography>
+            )}
+          </Box>
 
           <Box>
             {product.brand && (

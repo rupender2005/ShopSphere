@@ -1,0 +1,2082 @@
+[
+  {
+    "categorySlug": "smartphones",
+    "categoryName": "Smartphones",
+    "productName": "Galaxy S24 Ultra",
+    "imageNumber": 1,
+    "imageFile": "images/products/smartphones/galaxy-s24-ultra-1.jpg",
+    "photographer": "Phong Thanh",
+    "photographerUrl": "https://www.pexels.com/@phong-thanh-3607237",
+    "pexelsUrl": "https://www.pexels.com/photo/collection-of-mobile-phones-on-wooden-surface-36680544/"
+  },
+  {
+    "categorySlug": "smartphones",
+    "categoryName": "Smartphones",
+    "productName": "Nothing Phone 3",
+    "imageNumber": 1,
+    "imageFile": "images/products/smartphones/nothing-phone-3-1.jpg",
+    "photographer": "Kafeel Ahmed",
+    "photographerUrl": "https://www.pexels.com/@aksbykas",
+    "pexelsUrl": "https://www.pexels.com/photo/time-on-cellphone-screen-14979013/"
+  },
+  {
+    "categorySlug": "smartphones",
+    "categoryName": "Smartphones",
+    "productName": "OnePlus 13",
+    "imageNumber": 1,
+    "imageFile": "images/products/smartphones/oneplus-13-1.jpg",
+    "photographer": "Carlos Jairo",
+    "photographerUrl": "https://www.pexels.com/@cjanimus",
+    "pexelsUrl": "https://www.pexels.com/photo/expensive-gadgets-on-a-black-surface-7989742/"
+  },
+  {
+    "categorySlug": "smartphones",
+    "categoryName": "Smartphones",
+    "productName": "Xiaomi 14",
+    "imageNumber": 1,
+    "imageFile": "images/products/smartphones/xiaomi-14-1.jpg",
+    "photographer": "Steve A Johnson",
+    "photographerUrl": "https://www.pexels.com/@steve",
+    "pexelsUrl": "https://www.pexels.com/photo/black-and-white-smartphone-947407/"
+  },
+  {
+    "categorySlug": "smartphones",
+    "categoryName": "Smartphones",
+    "productName": "Reno 13 Pro",
+    "imageNumber": 1,
+    "imageFile": "images/products/smartphones/reno-13-pro-1.jpg",
+    "photographer": "Amar  Preciado",
+    "photographerUrl": "https://www.pexels.com/@amar",
+    "pexelsUrl": "https://www.pexels.com/photo/camera-lens-of-a-smartphone-11120516/"
+  },
+  {
+    "categorySlug": "smartphones",
+    "categoryName": "Smartphones",
+    "productName": "Pixel 9",
+    "imageNumber": 1,
+    "imageFile": "images/products/smartphones/pixel-9-1.jpg",
+    "photographer": "Rovshan Nazirli",
+    "photographerUrl": "https://www.pexels.com/@rovshan-nazirli-691066883",
+    "pexelsUrl": "https://www.pexels.com/photo/still-life-with-a-smart-phone-and-bandana-on-a-table-17984647/"
+  },
+  {
+    "categorySlug": "smartphones",
+    "categoryName": "Smartphones",
+    "productName": "Vivo X100",
+    "imageNumber": 1,
+    "imageFile": "images/products/smartphones/vivo-x100-1.jpg",
+    "photographer": "Yosi Ariyanda",
+    "photographerUrl": "https://www.pexels.com/@yosi-ariyanda-903002193",
+    "pexelsUrl": "https://www.pexels.com/photo/crossover-technology-27212302/"
+  },
+  {
+    "categorySlug": "laptops",
+    "categoryName": "Laptops",
+    "productName": "IdeaPad Slim 5",
+    "imageNumber": 1,
+    "imageFile": "images/products/laptops/ideapad-slim-5-1.jpg",
+    "photographer": "Boris K.",
+    "photographerUrl": "https://www.pexels.com/@borisk",
+    "pexelsUrl": "https://www.pexels.com/photo/monochrome-photo-of-coffe-beside-a-laptop-12200696/"
+  },
+  {
+    "categorySlug": "laptops",
+    "categoryName": "Laptops",
+    "productName": "Victus Gaming 16",
+    "imageNumber": 1,
+    "imageFile": "images/products/laptops/victus-gaming-16-1.jpg",
+    "photographer": "Kasra  Askari",
+    "photographerUrl": "https://www.pexels.com/@kasra-askari-273404874",
+    "pexelsUrl": "https://www.pexels.com/photo/keyboard-and-mouse-12877898/"
+  },
+  {
+    "categorySlug": "laptops",
+    "categoryName": "Laptops",
+    "productName": "ROG Strix G16",
+    "imageNumber": 1,
+    "imageFile": "images/products/laptops/rog-strix-g16-1.jpg",
+    "photographer": "Alex Andrews",
+    "photographerUrl": "https://www.pexels.com/@alex-andrews-271121",
+    "pexelsUrl": "https://www.pexels.com/photo/steam-deck-2-handheld-gaming-computer-on-black-surface-14005916/"
+  },
+  {
+    "categorySlug": "laptops",
+    "categoryName": "Laptops",
+    "productName": "Legion 5",
+    "imageNumber": 1,
+    "imageFile": "images/products/laptops/legion-5-1.jpg",
+    "photographer": "Dextar Studio ™",
+    "photographerUrl": "https://www.pexels.com/@dextarstudio",
+    "pexelsUrl": "https://www.pexels.com/photo/laptop-iphone-and-headphones-18311089/"
+  },
+  {
+    "categorySlug": "laptops",
+    "categoryName": "Laptops",
+    "productName": "ZenBook 14",
+    "imageNumber": 1,
+    "imageFile": "images/products/laptops/zenbook-14-1.jpg",
+    "photographer": "Claire  Ló",
+    "photographerUrl": "https://www.pexels.com/@clairelo",
+    "pexelsUrl": "https://www.pexels.com/photo/switched-off-laptop-on-white-background-11982694/"
+  },
+  {
+    "categorySlug": "laptops",
+    "categoryName": "Laptops",
+    "productName": "Pavilion 14",
+    "imageNumber": 1,
+    "imageFile": "images/products/laptops/pavilion-14-1.jpg",
+    "photographer": "José Hermes Furtunato",
+    "photographerUrl": "https://www.pexels.com/@jose-hermes-furtunato-2011500609",
+    "pexelsUrl": "https://www.pexels.com/photo/remote-work-in-a-tranquil-outdoor-setting-29052901/"
+  },
+  {
+    "categorySlug": "laptops",
+    "categoryName": "Laptops",
+    "productName": "XPS 13",
+    "imageNumber": 1,
+    "imageFile": "images/products/laptops/xps-13-1.jpg",
+    "photographer": "Jilly Noble",
+    "photographerUrl": "https://www.pexels.com/@jillyjillystudio",
+    "pexelsUrl": "https://www.pexels.com/photo/pink-aesthetic-desk-with-laptop-and-vintage-camera-29765806/"
+  },
+  {
+    "categorySlug": "tablets",
+    "categoryName": "Tablets",
+    "productName": "Galaxy Tab S9 FE",
+    "imageNumber": 1,
+    "imageFile": "images/products/tablets/galaxy-tab-s9-fe-1.jpg",
+    "photographer": "Rovshan Nazirli",
+    "photographerUrl": "https://www.pexels.com/@rovshan-nazirli-691066883",
+    "pexelsUrl": "https://www.pexels.com/photo/a-gray-apple-ipad-pro-18205642/"
+  },
+  {
+    "categorySlug": "tablets",
+    "categoryName": "Tablets",
+    "productName": "Galaxy Tab S9",
+    "imageNumber": 1,
+    "imageFile": "images/products/tablets/galaxy-tab-s9-1.jpg",
+    "photographer": "Beyza Oruk",
+    "photographerUrl": "https://www.pexels.com/@beyza-oruk-170981593",
+    "pexelsUrl": "https://www.pexels.com/photo/pictures-on-tablet-17803200/"
+  },
+  {
+    "categorySlug": "tablets",
+    "categoryName": "Tablets",
+    "productName": "OnePlus Pad 2",
+    "imageNumber": 1,
+    "imageFile": "images/products/tablets/oneplus-pad-2-1.jpg",
+    "photographer": "Sajith R",
+    "photographerUrl": "https://www.pexels.com/@designwallstudio",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-an-ipad-beside-a-pen-5946167/"
+  },
+  {
+    "categorySlug": "tablets",
+    "categoryName": "Tablets",
+    "productName": "Lenovo Tab P12",
+    "imageNumber": 1,
+    "imageFile": "images/products/tablets/lenovo-tab-p12-1.jpg",
+    "photographer": "Drew Williams",
+    "photographerUrl": "https://www.pexels.com/@drew-williams-1285451",
+    "pexelsUrl": "https://www.pexels.com/photo/person-sitting-on-grey-couch-using-ipad-2657668/"
+  },
+  {
+    "categorySlug": "tablets",
+    "categoryName": "Tablets",
+    "productName": "Xiaomi Pad 7",
+    "imageNumber": 1,
+    "imageFile": "images/products/tablets/xiaomi-pad-7-1.jpg",
+    "photographer": "Dextar Studio ™",
+    "photographerUrl": "https://www.pexels.com/@dextarstudio",
+    "pexelsUrl": "https://www.pexels.com/photo/iphone-laptop-ipad-pc-18311088/"
+  },
+  {
+    "categorySlug": "tablets",
+    "categoryName": "Tablets",
+    "productName": "Pixel Tablet",
+    "imageNumber": 1,
+    "imageFile": "images/products/tablets/pixel-tablet-1.jpg",
+    "photographer": "Jilly Noble",
+    "photographerUrl": "https://www.pexels.com/@jillyjillystudio",
+    "pexelsUrl": "https://www.pexels.com/photo/pink-aesthetic-workspace-with-tablet-and-cupcakes-29765798/"
+  },
+  {
+    "categorySlug": "tablets",
+    "categoryName": "Tablets",
+    "productName": "MatePad 11",
+    "imageNumber": 1,
+    "imageFile": "images/products/tablets/matepad-11-1.jpg",
+    "photographer": "猫 鱼",
+    "photographerUrl": "https://www.pexels.com/@2154236762",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-silver-tablet-with-camera-module-33125886/"
+  },
+  {
+    "categorySlug": "headphones-earbuds",
+    "categoryName": "Headphones & Earbuds",
+    "productName": "Soundcore Liberty 4",
+    "imageNumber": 1,
+    "imageFile": "images/products/headphones-earbuds/soundcore-liberty-4-1.jpg",
+    "photographer": "Sound On",
+    "photographerUrl": "https://www.pexels.com/@sound-on",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-photo-of-woman-wearing-grey-sweater-3756985/"
+  },
+  {
+    "categorySlug": "headphones-earbuds",
+    "categoryName": "Headphones & Earbuds",
+    "productName": "OnePlus Buds Pro",
+    "imageNumber": 1,
+    "imageFile": "images/products/headphones-earbuds/oneplus-buds-pro-1.jpg",
+    "photographer": "Jose Pompa",
+    "photographerUrl": "https://www.pexels.com/@jose-pompa-2148444545",
+    "pexelsUrl": "https://www.pexels.com/photo/young-man-with-earbuds-by-waterfront-32165312/"
+  },
+  {
+    "categorySlug": "headphones-earbuds",
+    "categoryName": "Headphones & Earbuds",
+    "productName": "QuietComfort Ultra",
+    "imageNumber": 1,
+    "imageFile": "images/products/headphones-earbuds/quietcomfort-ultra-1.jpg",
+    "photographer": "Emmanuel Jason Eliphalet",
+    "photographerUrl": "https://www.pexels.com/@sorjigrey",
+    "pexelsUrl": "https://www.pexels.com/photo/android-smartphone-next-to-a-wireless-earphone-9956763/"
+  },
+  {
+    "categorySlug": "headphones-earbuds",
+    "categoryName": "Headphones & Earbuds",
+    "productName": "Nothing Ear",
+    "imageNumber": 1,
+    "imageFile": "images/products/headphones-earbuds/nothing-ear-1.jpg",
+    "photographer": "I'm Zion",
+    "photographerUrl": "https://www.pexels.com/@zion",
+    "pexelsUrl": "https://www.pexels.com/photo/crop-man-holding-earbuds-in-charging-case-4526407/"
+  },
+  {
+    "categorySlug": "headphones-earbuds",
+    "categoryName": "Headphones & Earbuds",
+    "productName": "JBL Tune 770NC",
+    "imageNumber": 1,
+    "imageFile": "images/products/headphones-earbuds/jbl-tune-770nc-1.jpg",
+    "photographer": "Sound On",
+    "photographerUrl": "https://www.pexels.com/@sound-on",
+    "pexelsUrl": "https://www.pexels.com/photo/portrait-photography-of-woman-wearing-white-wireless-headphones-3394658/"
+  },
+  {
+    "categorySlug": "headphones-earbuds",
+    "categoryName": "Headphones & Earbuds",
+    "productName": "AirPods Max",
+    "imageNumber": 1,
+    "imageFile": "images/products/headphones-earbuds/airpods-max-1.jpg",
+    "photographer": "Sound On",
+    "photographerUrl": "https://www.pexels.com/@sound-on",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-in-gray-crew-neck-shirt-wearing-white-headphones-3756907/"
+  },
+  {
+    "categorySlug": "headphones-earbuds",
+    "categoryName": "Headphones & Earbuds",
+    "productName": "WF-1000XM5",
+    "imageNumber": 1,
+    "imageFile": "images/products/headphones-earbuds/wf-1000xm5-1.jpg",
+    "photographer": "Sound On",
+    "photographerUrl": "https://www.pexels.com/@sound-on",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-in-gray-sweater-holding-white-headphones-3756945/"
+  },
+  {
+    "categorySlug": "headphones-earbuds",
+    "categoryName": "Headphones & Earbuds",
+    "productName": "WH-1000XM5",
+    "imageNumber": 1,
+    "imageFile": "images/products/headphones-earbuds/wh-1000xm5-1.jpg",
+    "photographer": "Sound On",
+    "photographerUrl": "https://www.pexels.com/@sound-on",
+    "pexelsUrl": "https://www.pexels.com/photo/photo-of-woman-wearing-white-headphones-3756912/"
+  },
+  {
+    "categorySlug": "smart-watches",
+    "categoryName": "Smart Watches",
+    "productName": "Galaxy Watch Ultra",
+    "imageNumber": 1,
+    "imageFile": "images/products/smart-watches/galaxy-watch-ultra-1.jpg",
+    "photographer": "Ebayzar",
+    "photographerUrl": "https://www.pexels.com/@ebayzar-2151171115",
+    "pexelsUrl": "https://www.pexels.com/photo/sleek-black-smartwatch-on-vibrant-orange-background-31541678/"
+  },
+  {
+    "categorySlug": "smart-watches",
+    "categoryName": "Smart Watches",
+    "productName": "OnePlus Watch 2",
+    "imageNumber": 1,
+    "imageFile": "images/products/smart-watches/oneplus-watch-2-1.jpg",
+    "photographer": "Adrian Regeci",
+    "photographerUrl": "https://www.pexels.com/@regeci",
+    "pexelsUrl": "https://www.pexels.com/photo/an-apple-watch-on-a-white-surface-12564670/"
+  },
+  {
+    "categorySlug": "smart-watches",
+    "categoryName": "Smart Watches",
+    "productName": "Pixel Watch 3",
+    "imageNumber": 1,
+    "imageFile": "images/products/smart-watches/pixel-watch-3-1.jpg",
+    "photographer": "Connor Scott McManus",
+    "photographerUrl": "https://www.pexels.com/@connorscottmcmanus",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-view-of-motivational-message-on-smartwatch-11677077/"
+  },
+  {
+    "categorySlug": "smart-watches",
+    "categoryName": "Smart Watches",
+    "productName": "Watch GT 5",
+    "imageNumber": 1,
+    "imageFile": "images/products/smart-watches/watch-gt-5-1.jpg",
+    "photographer": "Adrian Regeci",
+    "photographerUrl": "https://www.pexels.com/@regeci",
+    "pexelsUrl": "https://www.pexels.com/photo/numbers-near-macbook-12880803/"
+  },
+  {
+    "categorySlug": "smart-watches",
+    "categoryName": "Smart Watches",
+    "productName": "Charge 6",
+    "imageNumber": 1,
+    "imageFile": "images/products/smart-watches/charge-6-1.jpg",
+    "photographer": "Segopotso Makhutja",
+    "photographerUrl": "https://www.pexels.com/@segopotso-makhutja-443819",
+    "pexelsUrl": "https://www.pexels.com/photo/gold-watch-1136589/"
+  },
+  {
+    "categorySlug": "smart-watches",
+    "categoryName": "Smart Watches",
+    "productName": "Versa 4",
+    "imageNumber": 1,
+    "imageFile": "images/products/smart-watches/versa-4-1.jpg",
+    "photographer": "Duncan Van Gortel",
+    "photographerUrl": "https://www.pexels.com/@duncan-van-gortel-1637524727",
+    "pexelsUrl": "https://www.pexels.com/photo/luxury-chronograph-wristwatch-on-leather-strap-28977357/"
+  },
+  {
+    "categorySlug": "smart-watches",
+    "categoryName": "Smart Watches",
+    "productName": "Venu 3",
+    "imageNumber": 1,
+    "imageFile": "images/products/smart-watches/venu-3-1.jpg",
+    "photographer": "Segopotso Makhutja",
+    "photographerUrl": "https://www.pexels.com/@segopotso-makhutja-443819",
+    "pexelsUrl": "https://www.pexels.com/photo/person-wearing-gold-colored-casio-digital-watch-with-linked-strap-1136591/"
+  },
+  {
+    "categorySlug": "cameras",
+    "categoryName": "Cameras",
+    "productName": "Lumix G9 II",
+    "imageNumber": 1,
+    "imageFile": "images/products/cameras/lumix-g9-ii-1.jpg",
+    "photographer": "Reel Focus  Productions",
+    "photographerUrl": "https://www.pexels.com/@reel-focus-productions-1574692701",
+    "pexelsUrl": "https://www.pexels.com/photo/canon-60d-27617054/"
+  },
+  {
+    "categorySlug": "cameras",
+    "categoryName": "Cameras",
+    "productName": "Alpha A6400",
+    "imageNumber": 1,
+    "imageFile": "images/products/cameras/alpha-a6400-1.jpg",
+    "photographer": "Raqeeb Ahmed",
+    "photographerUrl": "https://www.pexels.com/@raqeebkhan",
+    "pexelsUrl": "https://www.pexels.com/photo/man-holding-camera-in-hand-13827131/"
+  },
+  {
+    "categorySlug": "cameras",
+    "categoryName": "Cameras",
+    "productName": "Alpha A7 IV",
+    "imageNumber": 1,
+    "imageFile": "images/products/cameras/alpha-a7-iv-1.jpg",
+    "photographer": "Orkhan  Sweden",
+    "photographerUrl": "https://www.pexels.com/@orkhanshots",
+    "pexelsUrl": "https://www.pexels.com/photo/vintage-camera-on-marble-surface-overlooking-water-37546204/"
+  },
+  {
+    "categorySlug": "cameras",
+    "categoryName": "Cameras",
+    "productName": "X100VI",
+    "imageNumber": 1,
+    "imageFile": "images/products/cameras/x100vi-1.jpg",
+    "photographer": "Haberdoedas Photography",
+    "photographerUrl": "https://www.pexels.com/@haberdoedas",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-fujifilm-camera-with-lens-33037156/"
+  },
+  {
+    "categorySlug": "cameras",
+    "categoryName": "Cameras",
+    "productName": "X-T50",
+    "imageNumber": 1,
+    "imageFile": "images/products/cameras/x-t50-1.jpg",
+    "photographer": "Kwaku Griffin",
+    "photographerUrl": "https://www.pexels.com/@kwakugriffn",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-photo-of-a-camera-14346818/"
+  },
+  {
+    "categorySlug": "cameras",
+    "categoryName": "Cameras",
+    "productName": "Hero 13",
+    "imageNumber": 1,
+    "imageFile": "images/products/cameras/hero-13-1.jpg",
+    "photographer": "Pranjall Kumar",
+    "photographerUrl": "https://www.pexels.com/@pranjall-kumar-150768",
+    "pexelsUrl": "https://www.pexels.com/photo/camera-and-lenses-on-a-flat-surface-8636869/"
+  },
+  {
+    "categorySlug": "cameras",
+    "categoryName": "Cameras",
+    "productName": "Z6 III",
+    "imageNumber": 1,
+    "imageFile": "images/products/cameras/z6-iii-1.jpg",
+    "photographer": "Pranjall Kumar",
+    "photographerUrl": "https://www.pexels.com/@pranjall-kumar-150768",
+    "pexelsUrl": "https://www.pexels.com/photo/black-nikon-dslr-camera-lens-on-the-table-8637237/"
+  },
+  {
+    "categorySlug": "gaming",
+    "categoryName": "Gaming",
+    "productName": "Xbox Wireless Controller",
+    "imageNumber": 1,
+    "imageFile": "images/products/gaming/xbox-wireless-controller-1.jpg",
+    "photographer": "Tam'z Peeranat",
+    "photographerUrl": "https://www.pexels.com/@tam-z-peeranat-110741",
+    "pexelsUrl": "https://www.pexels.com/photo/an-xbox-game-controller-6962206/"
+  },
+  {
+    "categorySlug": "gaming",
+    "categoryName": "Gaming",
+    "productName": "Nintendo Switch OLED",
+    "imageNumber": 1,
+    "imageFile": "images/products/gaming/nintendo-switch-oled-1.jpg",
+    "photographer": "Jay Moon",
+    "photographerUrl": "https://www.pexels.com/@jay-moon-2149536798",
+    "pexelsUrl": "https://www.pexels.com/photo/hands-playing-with-a-retro-gaming-controller-37935954/"
+  },
+  {
+    "categorySlug": "gaming",
+    "categoryName": "Gaming",
+    "productName": "Gaming Headset G733",
+    "imageNumber": 1,
+    "imageFile": "images/products/gaming/gaming-headset-g733-1.jpg",
+    "photographer": "lance he",
+    "photographerUrl": "https://www.pexels.com/@lancehe",
+    "pexelsUrl": "https://www.pexels.com/photo/gray-and-white-game-controller-14642112/"
+  },
+  {
+    "categorySlug": "gaming",
+    "categoryName": "Gaming",
+    "productName": "DualSense Controller",
+    "imageNumber": 1,
+    "imageFile": "images/products/gaming/dualsense-controller-1.jpg",
+    "photographer": "Elizabeth Lizzie",
+    "photographerUrl": "https://www.pexels.com/@owayn",
+    "pexelsUrl": "https://www.pexels.com/photo/person-holding-black-sony-ps4-controller-11591941/"
+  },
+  {
+    "categorySlug": "gaming",
+    "categoryName": "Gaming",
+    "productName": "Xbox Series S",
+    "imageNumber": 1,
+    "imageFile": "images/products/gaming/xbox-series-s-1.jpg",
+    "photographer": "lance he",
+    "photographerUrl": "https://www.pexels.com/@lancehe",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-photo-of-joystick-controller-14642108/"
+  },
+  {
+    "categorySlug": "gaming",
+    "categoryName": "Gaming",
+    "productName": "G502 X Mouse",
+    "imageNumber": 1,
+    "imageFile": "images/products/gaming/g502-x-mouse-1.jpg",
+    "photographer": "Marcelo Verfe",
+    "photographerUrl": "https://www.pexels.com/@marceloverfe",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-a-playstation-joystick-16070479/"
+  },
+  {
+    "categorySlug": "gaming",
+    "categoryName": "Gaming",
+    "productName": "ROG Ally X",
+    "imageNumber": 1,
+    "imageFile": "images/products/gaming/rog-ally-x-1.jpg",
+    "photographer": "Jonathan Cooper",
+    "photographerUrl": "https://www.pexels.com/@theshuttervision",
+    "pexelsUrl": "https://www.pexels.com/photo/a-playstation-on-white-surface-9704415/"
+  },
+  {
+    "categorySlug": "mens-clothing",
+    "categoryName": "Men's Clothing",
+    "productName": "Casual Denim Jacket",
+    "imageNumber": 1,
+    "imageFile": "images/products/mens-clothing/casual-denim-jacket-1.jpg",
+    "photographer": "Lucxama Sylvain",
+    "photographerUrl": "https://www.pexels.com/@lucxama-sylvain-1361467",
+    "pexelsUrl": "https://www.pexels.com/photo/man-in-blue-denim-jacket-and-jeans-sitting-on-concrete-slab-2765557/"
+  },
+  {
+    "categorySlug": "mens-clothing",
+    "categoryName": "Men's Clothing",
+    "productName": "Linen Casual Shirt",
+    "imageNumber": 1,
+    "imageFile": "images/products/mens-clothing/linen-casual-shirt-1.jpg",
+    "photographer": "addy  bronzzz",
+    "photographerUrl": "https://www.pexels.com/@addy-bronzzz-264850064",
+    "pexelsUrl": "https://www.pexels.com/photo/model-in-an-unbuttoned-white-short-sleeved-shirt-with-a-purple-butterfly-print-lying-on-the-floor-19461512/"
+  },
+  {
+    "categorySlug": "mens-clothing",
+    "categoryName": "Men's Clothing",
+    "productName": "Regular Fit Jeans",
+    "imageNumber": 1,
+    "imageFile": "images/products/mens-clothing/regular-fit-jeans-1.jpg",
+    "photographer": "Abhishek  Shekhawat",
+    "photographerUrl": "https://www.pexels.com/@absoluteabhi",
+    "pexelsUrl": "https://www.pexels.com/photo/model-posing-in-white-shirt-20710023/"
+  },
+  {
+    "categorySlug": "mens-clothing",
+    "categoryName": "Men's Clothing",
+    "productName": "Formal Shirt",
+    "imageNumber": 1,
+    "imageFile": "images/products/mens-clothing/formal-shirt-1.jpg",
+    "photographer": "Deepak Tare",
+    "photographerUrl": "https://www.pexels.com/@deepak-tare-979654",
+    "pexelsUrl": "https://www.pexels.com/photo/man-wearing-maroon-sweatshirt-wearing-sunglasses-11725088/"
+  },
+  {
+    "categorySlug": "mens-clothing",
+    "categoryName": "Men's Clothing",
+    "productName": "511 Slim Jeans",
+    "imageNumber": 1,
+    "imageFile": "images/products/mens-clothing/511-slim-jeans-1.jpg",
+    "photographer": "Lappen Fashion",
+    "photographerUrl": "https://www.pexels.com/@lappen-fashion-2754326",
+    "pexelsUrl": "https://www.pexels.com/photo/man-wearing-gray-sweater-and-blue-denim-jeans-4295985/"
+  },
+  {
+    "categorySlug": "mens-clothing",
+    "categoryName": "Men's Clothing",
+    "productName": "Cargo Joggers",
+    "imageNumber": 1,
+    "imageFile": "images/products/mens-clothing/cargo-joggers-1.jpg",
+    "photographer": "sole heaven",
+    "photographerUrl": "https://www.pexels.com/@sole-heaven-1013230921",
+    "pexelsUrl": "https://www.pexels.com/photo/nike-dunk-low-medium-olive-sneakers-lying-on-satin-fabric-20298289/"
+  },
+  {
+    "categorySlug": "mens-clothing",
+    "categoryName": "Men's Clothing",
+    "productName": "Zip Hoodie",
+    "imageNumber": 1,
+    "imageFile": "images/products/mens-clothing/zip-hoodie-1.jpg",
+    "photographer": "Khalid Joe",
+    "photographerUrl": "https://www.pexels.com/@khalid-joe-1003699807",
+    "pexelsUrl": "https://www.pexels.com/photo/model-in-hoodie-crouching-on-stool-20248583/"
+  },
+  {
+    "categorySlug": "womens-clothing",
+    "categoryName": "Women's Clothing",
+    "productName": "Wide Leg Trousers",
+    "imageNumber": 1,
+    "imageFile": "images/products/womens-clothing/wide-leg-trousers-1.jpg",
+    "photographer": "SUNGWOO PARK",
+    "photographerUrl": "https://www.pexels.com/@sungwoo-park-774864686",
+    "pexelsUrl": "https://www.pexels.com/photo/stylish-fashion-model-in-wide-leg-jeans-and-hat-29627103/"
+  },
+  {
+    "categorySlug": "womens-clothing",
+    "categoryName": "Women's Clothing",
+    "productName": "Printed Kurta Set",
+    "imageNumber": 1,
+    "imageFile": "images/products/womens-clothing/printed-kurta-set-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-s-feet-in-brown-loafers-with-white-trim-27204299/"
+  },
+  {
+    "categorySlug": "womens-clothing",
+    "categoryName": "Women's Clothing",
+    "productName": "Oversized Sweatshirt",
+    "imageNumber": 1,
+    "imageFile": "images/products/womens-clothing/oversized-sweatshirt-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-holding-brown-leather-bag-27046145/"
+  },
+  {
+    "categorySlug": "womens-clothing",
+    "categoryName": "Women's Clothing",
+    "productName": "Summer Maxi Dress",
+    "imageNumber": 1,
+    "imageFile": "images/products/womens-clothing/summer-maxi-dress-1.jpg",
+    "photographer": "Hakim  Santoso",
+    "photographerUrl": "https://www.pexels.com/@hakimsatoso",
+    "pexelsUrl": "https://www.pexels.com/photo/a-woman-in-black-dress-with-hijab-6071513/"
+  },
+  {
+    "categorySlug": "womens-clothing",
+    "categoryName": "Women's Clothing",
+    "productName": "Relaxed Fit Jeans",
+    "imageNumber": 1,
+    "imageFile": "images/products/womens-clothing/relaxed-fit-jeans-1.jpg",
+    "photographer": "Anne R",
+    "photographerUrl": "https://www.pexels.com/@anne-r-168988",
+    "pexelsUrl": "https://www.pexels.com/photo/flatlay-photo-of-a-cute-outfit-4602025/"
+  },
+  {
+    "categorySlug": "womens-clothing",
+    "categoryName": "Women's Clothing",
+    "productName": "Cotton Kurta",
+    "imageNumber": 1,
+    "imageFile": "images/products/womens-clothing/cotton-kurta-1.jpg",
+    "photographer": "Thang Nguyen",
+    "photographerUrl": "https://www.pexels.com/@chipi1189",
+    "pexelsUrl": "https://www.pexels.com/photo/stylish-fall-outfit-flat-lay-with-boots-34976479/"
+  },
+  {
+    "categorySlug": "womens-clothing",
+    "categoryName": "Women's Clothing",
+    "productName": "Satin Top",
+    "imageNumber": 1,
+    "imageFile": "images/products/womens-clothing/satin-top-1.jpg",
+    "photographer": "Engin Akyurt",
+    "photographerUrl": "https://www.pexels.com/@enginakyurt",
+    "pexelsUrl": "https://www.pexels.com/photo/red-pants-and-shoes-on-wooden-floor-4458521/"
+  },
+  {
+    "categorySlug": "shoes",
+    "categoryName": "Shoes",
+    "productName": "Fresh Foam 1080",
+    "imageNumber": 1,
+    "imageFile": "images/products/shoes/fresh-foam-1080-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/zapatilla-negras-27503497/"
+  },
+  {
+    "categorySlug": "shoes",
+    "categoryName": "Shoes",
+    "productName": "574 Classic",
+    "imageNumber": 1,
+    "imageFile": "images/products/shoes/574-classic-1.jpg",
+    "photographer": "atiss260",
+    "photographerUrl": "https://www.pexels.com/@atiss260-1782110107",
+    "pexelsUrl": "https://www.pexels.com/photo/variety-of-sneakers-arranged-on-display-33597709/"
+  },
+  {
+    "categorySlug": "shoes",
+    "categoryName": "Shoes",
+    "productName": "Classic Leather",
+    "imageNumber": 1,
+    "imageFile": "images/products/shoes/classic-leather-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-wearing-leather-sneakers-27008320/"
+  },
+  {
+    "categorySlug": "shoes",
+    "categoryName": "Shoes",
+    "productName": "RS-X Sneakers",
+    "imageNumber": 1,
+    "imageFile": "images/products/shoes/rs-x-sneakers-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-model-wearing-silver-leather-sneakers-26954377/"
+  },
+  {
+    "categorySlug": "shoes",
+    "categoryName": "Shoes",
+    "productName": "Deviate Nitro",
+    "imageNumber": 1,
+    "imageFile": "images/products/shoes/deviate-nitro-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/legs-in-red-leather-sneakers-walking-down-steps-27063089/"
+  },
+  {
+    "categorySlug": "shoes",
+    "categoryName": "Shoes",
+    "productName": "Chuck 70",
+    "imageNumber": 1,
+    "imageFile": "images/products/shoes/chuck-70-1.jpg",
+    "photographer": "Vicky Tran",
+    "photographerUrl": "https://www.pexels.com/@vicky",
+    "pexelsUrl": "https://www.pexels.com/photo/photography-of-high-cut-converse-1745758/"
+  },
+  {
+    "categorySlug": "shoes",
+    "categoryName": "Shoes",
+    "productName": "Superstar",
+    "imageNumber": 1,
+    "imageFile": "images/products/shoes/superstar-1.jpg",
+    "photographer": "Vitaliy  Izonin",
+    "photographerUrl": "https://www.pexels.com/@izonin",
+    "pexelsUrl": "https://www.pexels.com/photo/blue-shoes-on-a-ladder-19869759/"
+  },
+  {
+    "categorySlug": "bags-backpacks",
+    "categoryName": "Bags & Backpacks",
+    "productName": "Rolling Cabin Bag",
+    "imageNumber": 1,
+    "imageFile": "images/products/bags-backpacks/rolling-cabin-bag-1.jpg",
+    "photographer": "Martin",
+    "photographerUrl": "https://www.pexels.com/@martin-3933774",
+    "pexelsUrl": "https://www.pexels.com/photo/man-carrying-a-black-bag-while-walking-on-rocks-5867971/"
+  },
+  {
+    "categorySlug": "bags-backpacks",
+    "categoryName": "Bags & Backpacks",
+    "productName": "Leather Office Bag",
+    "imageNumber": 1,
+    "imageFile": "images/products/bags-backpacks/leather-office-bag-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/leather-bags-in-a-studio-27046147/"
+  },
+  {
+    "categorySlug": "bags-backpacks",
+    "categoryName": "Bags & Backpacks",
+    "productName": "Premium Backpack",
+    "imageNumber": 1,
+    "imageFile": "images/products/bags-backpacks/premium-backpack-1.jpg",
+    "photographer": "MART  PRODUCTION",
+    "photographerUrl": "https://www.pexels.com/@mart-production",
+    "pexelsUrl": "https://www.pexels.com/photo/person-carrying-a-bag-walking-on-the-sidewalk-7706524/"
+  },
+  {
+    "categorySlug": "bags-backpacks",
+    "categoryName": "Bags & Backpacks",
+    "productName": "Classic Tote Bag",
+    "imageNumber": 1,
+    "imageFile": "images/products/bags-backpacks/classic-tote-bag-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/foto-creativa-de-carteras-27046146/"
+  },
+  {
+    "categorySlug": "bags-backpacks",
+    "categoryName": "Bags & Backpacks",
+    "productName": "Urban Backpack",
+    "imageNumber": 1,
+    "imageFile": "images/products/bags-backpacks/urban-backpack-1.jpg",
+    "photographer": "ahmet öktem",
+    "photographerUrl": "https://www.pexels.com/@ahmetoktem",
+    "pexelsUrl": "https://www.pexels.com/photo/red-haired-tourist-with-a-backpack-at-the-gate-of-a-tourist-attraction-18978810/"
+  },
+  {
+    "categorySlug": "bags-backpacks",
+    "categoryName": "Bags & Backpacks",
+    "productName": "Crossbody Bag",
+    "imageNumber": 1,
+    "imageFile": "images/products/bags-backpacks/crossbody-bag-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/brown-and-black-bags-27046143/"
+  },
+  {
+    "categorySlug": "bags-backpacks",
+    "categoryName": "Bags & Backpacks",
+    "productName": "Travel Duffel",
+    "imageNumber": 1,
+    "imageFile": "images/products/bags-backpacks/travel-duffel-1.jpg",
+    "photographer": "Jacek Jan Skorupski",
+    "photographerUrl": "https://www.pexels.com/@jjskorupski",
+    "pexelsUrl": "https://www.pexels.com/photo/unrecognizable-male-tourist-packing-bag-before-travelling-5711908/"
+  },
+  {
+    "categorySlug": "watches-accessories",
+    "categoryName": "Watches & Accessories",
+    "productName": "Metal Bracelet Watch",
+    "imageNumber": 1,
+    "imageFile": "images/products/watches-accessories/metal-bracelet-watch-1.jpg",
+    "photographer": "Hemanth K M",
+    "photographerUrl": "https://www.pexels.com/@hemanth-k-m-3511490",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-photo-of-a-chronograph-wristwatch-11638635/"
+  },
+  {
+    "categorySlug": "watches-accessories",
+    "categoryName": "Watches & Accessories",
+    "productName": "Leather Strap Watch",
+    "imageNumber": 1,
+    "imageFile": "images/products/watches-accessories/leather-strap-watch-1.jpg",
+    "photographer": "Mungai Mutugi",
+    "photographerUrl": "https://www.pexels.com/@mungai-mutugi-3669723",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-an-analog-wristwatch-6157408/"
+  },
+  {
+    "categorySlug": "watches-accessories",
+    "categoryName": "Watches & Accessories",
+    "productName": "Edifice Chronograph",
+    "imageNumber": 1,
+    "imageFile": "images/products/watches-accessories/edifice-chronograph-1.jpg",
+    "photographer": "The Glorious  Studio",
+    "photographerUrl": "https://www.pexels.com/@the-glorious-studio-3584518",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-photo-of-mont-blanc-chronograph-watch-with-black-leather-strap-13273980/"
+  },
+  {
+    "categorySlug": "watches-accessories",
+    "categoryName": "Watches & Accessories",
+    "productName": "Classic Gold Watch",
+    "imageNumber": 1,
+    "imageFile": "images/products/watches-accessories/classic-gold-watch-1.jpg",
+    "photographer": "Segopotso Makhutja",
+    "photographerUrl": "https://www.pexels.com/@segopotso-makhutja-443819",
+    "pexelsUrl": "https://www.pexels.com/photo/man-wearing-gold-colored-wristwatch-1136590/"
+  },
+  {
+    "categorySlug": "watches-accessories",
+    "categoryName": "Watches & Accessories",
+    "productName": "Retro Digital Watch",
+    "imageNumber": 1,
+    "imageFile": "images/products/watches-accessories/retro-digital-watch-1.jpg",
+    "photographer": "Biong Abdalla",
+    "photographerUrl": "https://www.pexels.com/@biongraphy",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-hands-wearing-stylish-digital-watches-35994530/"
+  },
+  {
+    "categorySlug": "watches-accessories",
+    "categoryName": "Watches & Accessories",
+    "productName": "Premium Steel Watch",
+    "imageNumber": 1,
+    "imageFile": "images/products/watches-accessories/premium-steel-watch-1.jpg",
+    "photographer": "sum sum",
+    "photographerUrl": "https://www.pexels.com/@sum-sum-2159674381",
+    "pexelsUrl": "https://www.pexels.com/photo/luxury-stainless-steel-watch-with-black-dial-38796257/"
+  },
+  {
+    "categorySlug": "watches-accessories",
+    "categoryName": "Watches & Accessories",
+    "productName": "Automatic Watch",
+    "imageNumber": 1,
+    "imageFile": "images/products/watches-accessories/automatic-watch-1.jpg",
+    "photographer": "Quang Viet Nguyen",
+    "photographerUrl": "https://www.pexels.com/@quang-viet-nguyen-107013384",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-a-silver-wrist-watch-12835319/"
+  },
+  {
+    "categorySlug": "furniture",
+    "categoryName": "Furniture",
+    "productName": "Wooden Coffee Table",
+    "imageNumber": 1,
+    "imageFile": "images/products/furniture/wooden-coffee-table-1.jpg",
+    "photographer": "martin aeschlimann",
+    "photographerUrl": "https://www.pexels.com/@martin-aeschlimann-874745312",
+    "pexelsUrl": "https://www.pexels.com/photo/rustic-outdoor-cafe-table-setting-with-coffee-36217757/"
+  },
+  {
+    "categorySlug": "furniture",
+    "categoryName": "Furniture",
+    "productName": "Queen Bed Frame",
+    "imageNumber": 1,
+    "imageFile": "images/products/furniture/queen-bed-frame-1.jpg",
+    "photographer": "Yusuf P",
+    "photographerUrl": "https://www.pexels.com/@artyusufpatel",
+    "pexelsUrl": "https://www.pexels.com/photo/simple-cell-in-basement-12471065/"
+  },
+  {
+    "categorySlug": "furniture",
+    "categoryName": "Furniture",
+    "productName": "Dining Table",
+    "imageNumber": 1,
+    "imageFile": "images/products/furniture/dining-table-1.jpg",
+    "photographer": "Franck Denis",
+    "photographerUrl": "https://www.pexels.com/@franck6687",
+    "pexelsUrl": "https://www.pexels.com/photo/a-wooden-dining-table-with-armchairs-5262675/"
+  },
+  {
+    "categorySlug": "furniture",
+    "categoryName": "Furniture",
+    "productName": "Recliner Chair",
+    "imageNumber": 1,
+    "imageFile": "images/products/furniture/recliner-chair-1.jpg",
+    "photographer": "Vicky Tran",
+    "photographerUrl": "https://www.pexels.com/@vicky",
+    "pexelsUrl": "https://www.pexels.com/photo/round-brown-dining-table-near-brown-couch-3104527/"
+  },
+  {
+    "categorySlug": "furniture",
+    "categoryName": "Furniture",
+    "productName": "TV Unit",
+    "imageNumber": 1,
+    "imageFile": "images/products/furniture/tv-unit-1.jpg",
+    "photographer": "Ayşegül  Aytören",
+    "photographerUrl": "https://www.pexels.com/@aysegul-aytoren-46790226",
+    "pexelsUrl": "https://www.pexels.com/photo/cozy-outdoor-cafe-seating-in-urban-setting-33388563/"
+  },
+  {
+    "categorySlug": "furniture",
+    "categoryName": "Furniture",
+    "productName": "Bedside Table",
+    "imageNumber": 1,
+    "imageFile": "images/products/furniture/bedside-table-1.jpg",
+    "photographer": "Rodrigo Neto",
+    "photographerUrl": "https://www.pexels.com/@netoo",
+    "pexelsUrl": "https://www.pexels.com/photo/marble-dining-table-and-chairs-in-the-living-room-22696776/"
+  },
+  {
+    "categorySlug": "furniture",
+    "categoryName": "Furniture",
+    "productName": "Bookshelf",
+    "imageNumber": 1,
+    "imageFile": "images/products/furniture/bookshelf-1.jpg",
+    "photographer": "Fatih  Sucu",
+    "photographerUrl": "https://www.pexels.com/@fatih-sucu-43042350",
+    "pexelsUrl": "https://www.pexels.com/photo/orange-table-and-chairs-near-green-plants-7512609/"
+  },
+  {
+    "categorySlug": "kitchen-dining",
+    "categoryName": "Kitchen & Dining",
+    "productName": "Dinner Set 24 Piece",
+    "imageNumber": 1,
+    "imageFile": "images/products/kitchen-dining/dinner-set-24-piece-1.jpg",
+    "photographer": "Hakim  Santoso",
+    "photographerUrl": "https://www.pexels.com/@hakimsatoso",
+    "pexelsUrl": "https://www.pexels.com/photo/plates-and-clear-wine-glasses-on-white-wooden-kitchen-cabinet-5556176/"
+  },
+  {
+    "categorySlug": "kitchen-dining",
+    "categoryName": "Kitchen & Dining",
+    "productName": "Induction Cooktop",
+    "imageNumber": 1,
+    "imageFile": "images/products/kitchen-dining/induction-cooktop-1.jpg",
+    "photographer": "juan pinales",
+    "photographerUrl": "https://www.pexels.com/@chikawaztla",
+    "pexelsUrl": "https://www.pexels.com/photo/stainless-steel-cooking-pot-with-lid-on-dark-background-36552082/"
+  },
+  {
+    "categorySlug": "kitchen-dining",
+    "categoryName": "Kitchen & Dining",
+    "productName": "Electric Kettle",
+    "imageNumber": 1,
+    "imageFile": "images/products/kitchen-dining/electric-kettle-1.jpg",
+    "photographer": "Barbara Webb",
+    "photographerUrl": "https://www.pexels.com/@texasgal51",
+    "pexelsUrl": "https://www.pexels.com/photo/photography-of-kettle-near-smoke-792615/"
+  },
+  {
+    "categorySlug": "kitchen-dining",
+    "categoryName": "Kitchen & Dining",
+    "productName": "Toaster",
+    "imageNumber": 1,
+    "imageFile": "images/products/kitchen-dining/toaster-1.jpg",
+    "photographer": "Squared one",
+    "photographerUrl": "https://www.pexels.com/@squared-one-361277527",
+    "pexelsUrl": "https://www.pexels.com/photo/sticker-on-toaster-17210074/"
+  },
+  {
+    "categorySlug": "kitchen-dining",
+    "categoryName": "Kitchen & Dining",
+    "productName": "Water Bottle Set",
+    "imageNumber": 1,
+    "imageFile": "images/products/kitchen-dining/water-bottle-set-1.jpg",
+    "photographer": "doTERRA International, LLC",
+    "photographerUrl": "https://www.pexels.com/@doterra-international-llc-2204678",
+    "pexelsUrl": "https://www.pexels.com/photo/wooden-tray-and-tomato-cream-in-a-kitchen-16767580/"
+  },
+  {
+    "categorySlug": "kitchen-dining",
+    "categoryName": "Kitchen & Dining",
+    "productName": "Knife Set",
+    "imageNumber": 1,
+    "imageFile": "images/products/kitchen-dining/knife-set-1.jpg",
+    "photographer": "Yevhen Khokhlov",
+    "photographerUrl": "https://www.pexels.com/@yevhen-khokhlov-1040795937",
+    "pexelsUrl": "https://www.pexels.com/photo/sleek-silver-knife-on-wet-dark-surface-30327171/"
+  },
+  {
+    "categorySlug": "kitchen-dining",
+    "categoryName": "Kitchen & Dining",
+    "productName": "Mixer Grinder",
+    "imageNumber": 1,
+    "imageFile": "images/products/kitchen-dining/mixer-grinder-1.jpg",
+    "photographer": "Blanca Isela",
+    "photographerUrl": "https://www.pexels.com/@byblaan",
+    "pexelsUrl": "https://www.pexels.com/photo/modern-coffee-brewing-setup-with-kettle-and-grinder-35240184/"
+  },
+  {
+    "categorySlug": "home-decor",
+    "categoryName": "Home Decor",
+    "productName": "Decorative Candle Set",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-decor/decorative-candle-set-1.jpg",
+    "photographer": "Artstory online",
+    "photographerUrl": "https://www.pexels.com/@artstory",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-golden-pumpkin-decor-and-candles-at-home-14584006/"
+  },
+  {
+    "categorySlug": "home-decor",
+    "categoryName": "Home Decor",
+    "productName": "Table Decor Set",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-decor/table-decor-set-1.jpg",
+    "photographer": "Vitor Matheus",
+    "photographerUrl": "https://www.pexels.com/@vittmb",
+    "pexelsUrl": "https://www.pexels.com/photo/rustic-decorative-vase-with-dried-pampas-grass-30181137/"
+  },
+  {
+    "categorySlug": "home-decor",
+    "categoryName": "Home Decor",
+    "productName": "Wall Art Set",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-decor/wall-art-set-1.jpg",
+    "photographer": "Squared one",
+    "photographerUrl": "https://www.pexels.com/@squared-one-361277527",
+    "pexelsUrl": "https://www.pexels.com/photo/pictures-of-smiling-woman-and-running-man-on-white-wall-17210077/"
+  },
+  {
+    "categorySlug": "home-decor",
+    "categoryName": "Home Decor",
+    "productName": "Decorative Mirror",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-decor/decorative-mirror-1.jpg",
+    "photographer": "zhu yi",
+    "photographerUrl": "https://www.pexels.com/@zhu-yi-22208710",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-ceramic-figurines-6846348/"
+  },
+  {
+    "categorySlug": "home-decor",
+    "categoryName": "Home Decor",
+    "productName": "Cushion Cover Set",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-decor/cushion-cover-set-1.jpg",
+    "photographer": "Tori Gordon",
+    "photographerUrl": "https://www.pexels.com/@techgirltori",
+    "pexelsUrl": "https://www.pexels.com/photo/beige-sofa-with-cushions-in-the-middle-of-a-living-room-24304750/"
+  },
+  {
+    "categorySlug": "home-decor",
+    "categoryName": "Home Decor",
+    "productName": "Photo Frame Set",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-decor/photo-frame-set-1.jpg",
+    "photographer": "Kate Branch",
+    "photographerUrl": "https://www.pexels.com/@katebranch",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-mirror-8634406/"
+  },
+  {
+    "categorySlug": "lighting",
+    "categoryName": "Lighting",
+    "productName": "Decorative Pendant Light",
+    "imageNumber": 1,
+    "imageFile": "images/products/lighting/decorative-pendant-light-1.jpg",
+    "photographer": "Livia Siu",
+    "photographerUrl": "https://www.pexels.com/@livia-siu-487836014",
+    "pexelsUrl": "https://www.pexels.com/photo/round-shape-lamps-in-a-living-room-16769172/"
+  },
+  {
+    "categorySlug": "lighting",
+    "categoryName": "Lighting",
+    "productName": "LED Strip Light",
+    "imageNumber": 1,
+    "imageFile": "images/products/lighting/led-strip-light-1.jpg",
+    "photographer": "Pușcaș Adryan",
+    "photographerUrl": "https://www.pexels.com/@pu-ca-adryan-163345030",
+    "pexelsUrl": "https://www.pexels.com/photo/modern-wooden-led-lamp-in-minimalist-setting-37954552/"
+  },
+  {
+    "categorySlug": "lighting",
+    "categoryName": "Lighting",
+    "productName": "Ceiling Light",
+    "imageNumber": 1,
+    "imageFile": "images/products/lighting/ceiling-light-1.jpg",
+    "photographer": "Malte Luk",
+    "photographerUrl": "https://www.pexels.com/@maltelu",
+    "pexelsUrl": "https://www.pexels.com/photo/round-lamp-on-black-background-13046056/"
+  },
+  {
+    "categorySlug": "lighting",
+    "categoryName": "Lighting",
+    "productName": "Reading Lamp",
+    "imageNumber": 1,
+    "imageFile": "images/products/lighting/reading-lamp-1.jpg",
+    "photographer": "Abdullah Alsaibaie",
+    "photographerUrl": "https://www.pexels.com/@aalsaibaie",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-a-pendant-lamp-11281576/"
+  },
+  {
+    "categorySlug": "lighting",
+    "categoryName": "Lighting",
+    "productName": "Table Lamp",
+    "imageNumber": 1,
+    "imageFile": "images/products/lighting/table-lamp-1.jpg",
+    "photographer": "ALOK DAS",
+    "photographerUrl": "https://www.pexels.com/@alokkd1",
+    "pexelsUrl": "https://www.pexels.com/photo/decorative-vase-on-table-18751032/"
+  },
+  {
+    "categorySlug": "lighting",
+    "categoryName": "Lighting",
+    "productName": "Night Lamp",
+    "imageNumber": 1,
+    "imageFile": "images/products/lighting/night-lamp-1.jpg",
+    "photographer": "☆ JK ☆",
+    "photographerUrl": "https://www.pexels.com/@jk-640510780",
+    "pexelsUrl": "https://www.pexels.com/photo/red-shining-paper-lamps-17601180/"
+  },
+  {
+    "categorySlug": "home-appliances",
+    "categoryName": "Home Appliances",
+    "productName": "Water Heater 15L",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-appliances/water-heater-15l-1.jpg",
+    "photographer": "Pușcaș Adryan",
+    "photographerUrl": "https://www.pexels.com/@pu-ca-adryan-163345030",
+    "pexelsUrl": "https://www.pexels.com/photo/modern-laundry-room-with-washer-and-dryer-28479466/"
+  },
+  {
+    "categorySlug": "home-appliances",
+    "categoryName": "Home Appliances",
+    "productName": "Air Purifier",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-appliances/air-purifier-1.jpg",
+    "photographer": "Alina Echo",
+    "photographerUrl": "https://www.pexels.com/@alina-echo-77753646",
+    "pexelsUrl": "https://www.pexels.com/photo/urban-architecture-black-and-white-windows-40175118/"
+  },
+  {
+    "categorySlug": "home-appliances",
+    "categoryName": "Home Appliances",
+    "productName": "Vacuum Cleaner",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-appliances/vacuum-cleaner-1.jpg",
+    "photographer": "The Ghazi",
+    "photographerUrl": "https://www.pexels.com/@the-ghazi-2152398165",
+    "pexelsUrl": "https://www.pexels.com/photo/modern-kitchen-and-dining-interior-design-32269127/"
+  },
+  {
+    "categorySlug": "home-appliances",
+    "categoryName": "Home Appliances",
+    "productName": "Robot Vacuum",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-appliances/robot-vacuum-1.jpg",
+    "photographer": "Татьяна Танатова",
+    "photographerUrl": "https://www.pexels.com/@2192742",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-in-pink-shirt-and-pants-sitting-on-chair-3846402/"
+  },
+  {
+    "categorySlug": "home-appliances",
+    "categoryName": "Home Appliances",
+    "productName": "Room Heater",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-appliances/room-heater-1.jpg",
+    "photographer": "Pușcaș Adryan",
+    "photographerUrl": "https://www.pexels.com/@pu-ca-adryan-163345030",
+    "pexelsUrl": "https://www.pexels.com/photo/modern-bathroom-with-laundry-appliances-and-minimalist-decor-28479464/"
+  },
+  {
+    "categorySlug": "home-appliances",
+    "categoryName": "Home Appliances",
+    "productName": "Dishwasher",
+    "imageNumber": 1,
+    "imageFile": "images/products/home-appliances/dishwasher-1.jpg",
+    "photographer": "Lightnass .",
+    "photographerUrl": "https://www.pexels.com/@lightnass-146505181",
+    "pexelsUrl": "https://www.pexels.com/photo/washing-machines-on-red-and-white-tiles-12104070/"
+  },
+  {
+    "categorySlug": "skincare",
+    "categoryName": "Skincare",
+    "productName": "Sunscreen SPF 50",
+    "imageNumber": 1,
+    "imageFile": "images/products/skincare/sunscreen-spf-50-1.jpg",
+    "photographer": "Ela De Pure",
+    "photographerUrl": "https://www.pexels.com/@ela-de-pure-1402904686",
+    "pexelsUrl": "https://www.pexels.com/photo/minimalist-skincare-products-in-natural-light-39281910/"
+  },
+  {
+    "categorySlug": "skincare",
+    "categoryName": "Skincare",
+    "productName": "Retinol Serum",
+    "imageNumber": 1,
+    "imageFile": "images/products/skincare/retinol-serum-1.jpg",
+    "photographer": "Ela De Pure",
+    "photographerUrl": "https://www.pexels.com/@ela-de-pure-1402904686",
+    "pexelsUrl": "https://www.pexels.com/photo/minimalist-retinol-serum-bottle-in-natural-light-39402079/"
+  },
+  {
+    "categorySlug": "skincare",
+    "categoryName": "Skincare",
+    "productName": "Foaming Cleanser",
+    "imageNumber": 1,
+    "imageFile": "images/products/skincare/foaming-cleanser-1.jpg",
+    "photographer": "Moni Rathnak",
+    "photographerUrl": "https://www.pexels.com/@monirathnak",
+    "pexelsUrl": "https://www.pexels.com/photo/milky-jelly-cleanser-in-droplets-24602079/"
+  },
+  {
+    "categorySlug": "skincare",
+    "categoryName": "Skincare",
+    "productName": "Hydrating Toner",
+    "imageNumber": 1,
+    "imageFile": "images/products/skincare/hydrating-toner-1.jpg",
+    "photographer": "Vilvah Store",
+    "photographerUrl": "https://www.pexels.com/@yaazhini",
+    "pexelsUrl": "https://www.pexels.com/photo/serum-and-toner-on-white-background-20382236/"
+  },
+  {
+    "categorySlug": "skincare",
+    "categoryName": "Skincare",
+    "productName": "Eye Cream",
+    "imageNumber": 1,
+    "imageFile": "images/products/skincare/eye-cream-1.jpg",
+    "photographer": "Rabiya",
+    "photographerUrl": "https://www.pexels.com/@rabiya-2150648885",
+    "pexelsUrl": "https://www.pexels.com/photo/bag-buster-eye-cream-on-vibrant-display-31251908/"
+  },
+  {
+    "categorySlug": "skincare",
+    "categoryName": "Skincare",
+    "productName": "Face Wash",
+    "imageNumber": 1,
+    "imageFile": "images/products/skincare/face-wash-1.jpg",
+    "photographer": "Makrufin Muhammad",
+    "photographerUrl": "https://www.pexels.com/@makrufinmuhammad",
+    "pexelsUrl": "https://www.pexels.com/photo/skincare-product-set-with-minimalist-packaging-33538456/"
+  },
+  {
+    "categorySlug": "skincare",
+    "categoryName": "Skincare",
+    "productName": "Body Lotion",
+    "imageNumber": 1,
+    "imageFile": "images/products/skincare/body-lotion-1.jpg",
+    "photographer": "Makrufin Muhammad",
+    "photographerUrl": "https://www.pexels.com/@makrufinmuhammad",
+    "pexelsUrl": "https://www.pexels.com/photo/marlov-white-glow-body-lotion-collection-display-33537356/"
+  },
+  {
+    "categorySlug": "makeup",
+    "categoryName": "Makeup",
+    "productName": "Eyeshadow Palette",
+    "imageNumber": 1,
+    "imageFile": "images/products/makeup/eyeshadow-palette-1.jpg",
+    "photographer": "EcoPanda",
+    "photographerUrl": "https://www.pexels.com/@ecopanda-2814628",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-reusable-cotton-pads-4354698/"
+  },
+  {
+    "categorySlug": "makeup",
+    "categoryName": "Makeup",
+    "productName": "Blush Palette",
+    "imageNumber": 1,
+    "imageFile": "images/products/makeup/blush-palette-1.jpg",
+    "photographer": "Hakim  Santoso",
+    "photographerUrl": "https://www.pexels.com/@hakimsatoso",
+    "pexelsUrl": "https://www.pexels.com/photo/products-photography-of-make-over-cosmetic-products-on-blue-surface-6527697/"
+  },
+  {
+    "categorySlug": "makeup",
+    "categoryName": "Makeup",
+    "productName": "Liquid Eyeliner",
+    "imageNumber": 1,
+    "imageFile": "images/products/makeup/liquid-eyeliner-1.jpg",
+    "photographer": "ALOK DAS",
+    "photographerUrl": "https://www.pexels.com/@alokkd1",
+    "pexelsUrl": "https://www.pexels.com/photo/lipsticks-in-a-studio-25906586/"
+  },
+  {
+    "categorySlug": "makeup",
+    "categoryName": "Makeup",
+    "productName": "Makeup Primer",
+    "imageNumber": 1,
+    "imageFile": "images/products/makeup/makeup-primer-1.jpg",
+    "photographer": "Ssümçiğ",
+    "photographerUrl": "https://www.pexels.com/@sumcig",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-eye-with-natural-makeup-38283818/"
+  },
+  {
+    "categorySlug": "makeup",
+    "categoryName": "Makeup",
+    "productName": "Compact Powder",
+    "imageNumber": 1,
+    "imageFile": "images/products/makeup/compact-powder-1.jpg",
+    "photographer": "Febi ola",
+    "photographerUrl": "https://www.pexels.com/@febi-ola-104297373",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-foundation-in-a-white-textile-10044948/"
+  },
+  {
+    "categorySlug": "makeup",
+    "categoryName": "Makeup",
+    "productName": "Concealer",
+    "imageNumber": 1,
+    "imageFile": "images/products/makeup/concealer-1.jpg",
+    "photographer": "Aditi Ahalawat",
+    "photographerUrl": "https://www.pexels.com/@aditi-ahalawat-2062245",
+    "pexelsUrl": "https://www.pexels.com/photo/cosmetic-concealer-composed-near-eyeshadows-with-brushes-6233285/"
+  },
+  {
+    "categorySlug": "makeup",
+    "categoryName": "Makeup",
+    "productName": "Highlighter",
+    "imageNumber": 1,
+    "imageFile": "images/products/makeup/highlighter-1.jpg",
+    "photographer": "Larysa Stratiichuk",
+    "photographerUrl": "https://www.pexels.com/@larysa-stratiichuk-1606923648",
+    "pexelsUrl": "https://www.pexels.com/photo/tattoo-ink-bottles-with-pink-rotary-machine-29877731/"
+  },
+  {
+    "categorySlug": "hair-care-fragrances",
+    "categoryName": "Hair Care & Fragrances",
+    "productName": "Anti Dandruff Shampoo",
+    "imageNumber": 1,
+    "imageFile": "images/products/hair-care-fragrances/anti-dandruff-shampoo-1.jpg",
+    "photographer": "Ela De Pure",
+    "photographerUrl": "https://www.pexels.com/@ela-de-pure-1402904686",
+    "pexelsUrl": "https://www.pexels.com/photo/minimalist-haircare-product-display-with-books-33525723/"
+  },
+  {
+    "categorySlug": "hair-care-fragrances",
+    "categoryName": "Hair Care & Fragrances",
+    "productName": "Women's Perfume",
+    "imageNumber": 1,
+    "imageFile": "images/products/hair-care-fragrances/womens-perfume-1.jpg",
+    "photographer": "Кристина Александрова",
+    "photographerUrl": "https://www.pexels.com/@2119877",
+    "pexelsUrl": "https://www.pexels.com/photo/luxurious-cosmetic-products-on-textile-3750640/"
+  },
+  {
+    "categorySlug": "hair-care-fragrances",
+    "categoryName": "Hair Care & Fragrances",
+    "productName": "Body Mist",
+    "imageNumber": 1,
+    "imageFile": "images/products/hair-care-fragrances/body-mist-1.jpg",
+    "photographer": "Makrufin Muhammad",
+    "photographerUrl": "https://www.pexels.com/@makrufinmuhammad",
+    "pexelsUrl": "https://www.pexels.com/photo/marlov-body-mist-trio-with-yellow-bonsai-33537129/"
+  },
+  {
+    "categorySlug": "hair-care-fragrances",
+    "categoryName": "Hair Care & Fragrances",
+    "productName": "Men's Perfume",
+    "imageNumber": 1,
+    "imageFile": "images/products/hair-care-fragrances/mens-perfume-1.jpg",
+    "photographer": "Absin",
+    "photographerUrl": "https://www.pexels.com/@absin-547911446",
+    "pexelsUrl": "https://www.pexels.com/photo/vial-of-perfume-19004228/"
+  },
+  {
+    "categorySlug": "hair-care-fragrances",
+    "categoryName": "Hair Care & Fragrances",
+    "productName": "Deodorant Spray",
+    "imageNumber": 1,
+    "imageFile": "images/products/hair-care-fragrances/deodorant-spray-1.jpg",
+    "photographer": "Đặng Thanh Tú",
+    "photographerUrl": "https://www.pexels.com/@d-ng-thanh-tu-2922122",
+    "pexelsUrl": "https://www.pexels.com/photo/studio-shoot-of-a-perfume-spray-bottle-16722498/"
+  },
+  {
+    "categorySlug": "hair-care-fragrances",
+    "categoryName": "Hair Care & Fragrances",
+    "productName": "Hair Mask",
+    "imageNumber": 1,
+    "imageFile": "images/products/hair-care-fragrances/hair-mask-1.jpg",
+    "photographer": "Ela De Pure",
+    "photographerUrl": "https://www.pexels.com/@ela-de-pure-1402904686",
+    "pexelsUrl": "https://www.pexels.com/photo/elegant-display-of-luxury-hair-and-skincare-products-38821137/"
+  },
+  {
+    "categorySlug": "hair-care-fragrances",
+    "categoryName": "Hair Care & Fragrances",
+    "productName": "Eau de Parfum",
+    "imageNumber": 1,
+    "imageFile": "images/products/hair-care-fragrances/eau-de-parfum-1.jpg",
+    "photographer": "Absin",
+    "photographerUrl": "https://www.pexels.com/@absin-547911446",
+    "pexelsUrl": "https://www.pexels.com/photo/bottle-of-gucci-bloom-eau-de-parfum-intense-on-a-white-silk-19170040/"
+  },
+  {
+    "categorySlug": "fitness-gym",
+    "categoryName": "Fitness & Gym",
+    "productName": "Kettlebell 10KG",
+    "imageNumber": 1,
+    "imageFile": "images/products/fitness-gym/kettlebell-10kg-1.jpg",
+    "photographer": "Alexa Popovich",
+    "photographerUrl": "https://www.pexels.com/@alexapopovich",
+    "pexelsUrl": "https://www.pexels.com/photo/man-inside-the-gym-flexing-his-muscles-9302172/"
+  },
+  {
+    "categorySlug": "fitness-gym",
+    "categoryName": "Fitness & Gym",
+    "productName": "Skipping Rope",
+    "imageNumber": 1,
+    "imageFile": "images/products/fitness-gym/skipping-rope-1.jpg",
+    "photographer": "Alexa Popovich",
+    "photographerUrl": "https://www.pexels.com/@alexapopovich",
+    "pexelsUrl": "https://www.pexels.com/photo/man-holding-and-bending-bar-at-gym-16552841/"
+  },
+  {
+    "categorySlug": "fitness-gym",
+    "categoryName": "Fitness & Gym",
+    "productName": "Fitness Bench",
+    "imageNumber": 1,
+    "imageFile": "images/products/fitness-gym/fitness-bench-1.jpg",
+    "photographer": "Marius Aholou",
+    "photographerUrl": "https://www.pexels.com/@marius-aholou-193600353",
+    "pexelsUrl": "https://www.pexels.com/photo/a-man-working-out-11433027/"
+  },
+  {
+    "categorySlug": "fitness-gym",
+    "categoryName": "Fitness & Gym",
+    "productName": "Exercise Bike",
+    "imageNumber": 1,
+    "imageFile": "images/products/fitness-gym/exercise-bike-1.jpg",
+    "photographer": "ibrahim hafedh",
+    "photographerUrl": "https://www.pexels.com/@ibrahim-hafedh-433322428",
+    "pexelsUrl": "https://www.pexels.com/photo/a-woman-in-a-black-shirt-riding-a-bike-16216727/"
+  },
+  {
+    "categorySlug": "fitness-gym",
+    "categoryName": "Fitness & Gym",
+    "productName": "Foam Roller",
+    "imageNumber": 1,
+    "imageFile": "images/products/fitness-gym/foam-roller-1.jpg",
+    "photographer": "Bill Bistak",
+    "photographerUrl": "https://www.pexels.com/@bill-bistak-3593209",
+    "pexelsUrl": "https://www.pexels.com/photo/steel-sport-equipment-6824816/"
+  },
+  {
+    "categorySlug": "fitness-gym",
+    "categoryName": "Fitness & Gym",
+    "productName": "Treadmill",
+    "imageNumber": 1,
+    "imageFile": "images/products/fitness-gym/treadmill-1.jpg",
+    "photographer": "ibrahim hafedh",
+    "photographerUrl": "https://www.pexels.com/@ibrahim-hafedh-433322428",
+    "pexelsUrl": "https://www.pexels.com/photo/a-woman-in-a-black-shirt-riding-a-stationary-bike-16216730/"
+  },
+  {
+    "categorySlug": "fitness-gym",
+    "categoryName": "Fitness & Gym",
+    "productName": "Gym Gloves",
+    "imageNumber": 1,
+    "imageFile": "images/products/fitness-gym/gym-gloves-1.jpg",
+    "photographer": "Alexa Popovich",
+    "photographerUrl": "https://www.pexels.com/@alexapopovich",
+    "pexelsUrl": "https://www.pexels.com/photo/a-woman-in-brown-leopard-print-clothes-sitting-on-black-and-gray-exercise-equipment-10551484/"
+  },
+  {
+    "categorySlug": "cricket-sports",
+    "categoryName": "Cricket & Sports",
+    "productName": "Badminton Racket",
+    "imageNumber": 1,
+    "imageFile": "images/products/cricket-sports/badminton-racket-1.jpg",
+    "photographer": "Johan Tufvesson",
+    "photographerUrl": "https://www.pexels.com/@digijohan",
+    "pexelsUrl": "https://www.pexels.com/photo/orange-and-white-tennis-racket-on-the-ground-13789945/"
+  },
+  {
+    "categorySlug": "cricket-sports",
+    "categoryName": "Cricket & Sports",
+    "productName": "Table Tennis Set",
+    "imageNumber": 1,
+    "imageFile": "images/products/cricket-sports/table-tennis-set-1.jpg",
+    "photographer": "Martina Martinez",
+    "photographerUrl": "https://www.pexels.com/@martina-martinez-504249965",
+    "pexelsUrl": "https://www.pexels.com/photo/table-tennis-rackets-and-ball-16686174/"
+  },
+  {
+    "categorySlug": "cricket-sports",
+    "categoryName": "Cricket & Sports",
+    "productName": "Tennis Racket",
+    "imageNumber": 1,
+    "imageFile": "images/products/cricket-sports/tennis-racket-1.jpg",
+    "photographer": "Jon",
+    "photographerUrl": "https://www.pexels.com/@jon-254413258",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-in-black-and-white-hoodie-jacket-holding-tennis-racket-13312289/"
+  },
+  {
+    "categorySlug": "cricket-sports",
+    "categoryName": "Cricket & Sports",
+    "productName": "Football Boots",
+    "imageNumber": 1,
+    "imageFile": "images/products/cricket-sports/football-boots-1.jpg",
+    "photographer": "Dhia Eddine",
+    "photographerUrl": "https://www.pexels.com/@itzerya",
+    "pexelsUrl": "https://www.pexels.com/photo/leather-football-ball-7154760/"
+  },
+  {
+    "categorySlug": "cricket-sports",
+    "categoryName": "Cricket & Sports",
+    "productName": "Basketball",
+    "imageNumber": 1,
+    "imageFile": "images/products/cricket-sports/basketball-1.jpg",
+    "photographer": "Jonathan Sykes",
+    "photographerUrl": "https://www.pexels.com/@jonathan-sykes-97163398",
+    "pexelsUrl": "https://www.pexels.com/photo/aerial-view-of-tennis-court-9276888/"
+  },
+  {
+    "categorySlug": "cricket-sports",
+    "categoryName": "Cricket & Sports",
+    "productName": "Cricket Gloves",
+    "imageNumber": 1,
+    "imageFile": "images/products/cricket-sports/cricket-gloves-1.jpg",
+    "photographer": "Rafael Minguet Delgado",
+    "photographerUrl": "https://www.pexels.com/@thales13",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-green-bush-cricket-in-dry-vegetation-33420975/"
+  },
+  {
+    "categorySlug": "cricket-sports",
+    "categoryName": "Cricket & Sports",
+    "productName": "Football",
+    "imageNumber": 1,
+    "imageFile": "images/products/cricket-sports/football-1.jpg",
+    "photographer": "Dhia Eddine",
+    "photographerUrl": "https://www.pexels.com/@itzerya",
+    "pexelsUrl": "https://www.pexels.com/photo/football-ball-on-the-white-surface-7154759/"
+  },
+  {
+    "categorySlug": "books",
+    "categoryName": "Books",
+    "productName": "Harry Potter and the Philosopher's Stone",
+    "imageNumber": 1,
+    "imageFile": "images/products/books/harry-potter-and-the-philosophers-stone-1.jpg",
+    "photographer": "Abner Navarro",
+    "photographerUrl": "https://www.pexels.com/@abner-navarro-450464759",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-lying-on-open-books-and-reading-19446756/"
+  },
+  {
+    "categorySlug": "books",
+    "categoryName": "Books",
+    "productName": "The Psychology of Money",
+    "imageNumber": 1,
+    "imageFile": "images/products/books/the-psychology-of-money-1.jpg",
+    "photographer": "Dmitry Rodionov",
+    "photographerUrl": "https://www.pexels.com/@dmitry-rodionov",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-lying-down-with-book-20107107/"
+  },
+  {
+    "categorySlug": "books",
+    "categoryName": "Books",
+    "productName": "Rich Dad Poor Dad",
+    "imageNumber": 1,
+    "imageFile": "images/products/books/rich-dad-poor-dad-1.jpg",
+    "photographer": "Anna Zanovelli Bacci",
+    "photographerUrl": "https://www.pexels.com/@anna-zanovelli-bacci-1998392651",
+    "pexelsUrl": "https://www.pexels.com/photo/cozy-home-decor-with-books-and-lantern-29010900/"
+  },
+  {
+    "categorySlug": "books",
+    "categoryName": "Books",
+    "productName": "Think and Grow Rich",
+    "imageNumber": 1,
+    "imageFile": "images/products/books/think-and-grow-rich-1.jpg",
+    "photographer": "Alexandra Krainyukhova",
+    "photographerUrl": "https://www.pexels.com/@alexakrain",
+    "pexelsUrl": "https://www.pexels.com/photo/a-person-holding-books-8207315/"
+  },
+  {
+    "categorySlug": "books",
+    "categoryName": "Books",
+    "productName": "The Hobbit",
+    "imageNumber": 1,
+    "imageFile": "images/products/books/the-hobbit-1.jpg",
+    "photographer": "Capella",
+    "photographerUrl": "https://www.pexels.com/@capella-214985924",
+    "pexelsUrl": "https://www.pexels.com/photo/a-person-holding-books-11829140/"
+  },
+  {
+    "categorySlug": "books",
+    "categoryName": "Books",
+    "productName": "Deep Work",
+    "imageNumber": 1,
+    "imageFile": "images/products/books/deep-work-1.jpg",
+    "photographer": "Pixabay",
+    "photographerUrl": "https://www.pexels.com/@pixabay",
+    "pexelsUrl": "https://www.pexels.com/photo/woman-wearing-grey-tank-top-and-sitting-in-ground-261941/"
+  },
+  {
+    "categorySlug": "books",
+    "categoryName": "Books",
+    "productName": "1984",
+    "imageNumber": 1,
+    "imageFile": "images/products/books/1984-1.jpg",
+    "photographer": "Ufuk Çakıroglu",
+    "photographerUrl": "https://www.pexels.com/@ufuk-cakiroglu-2147936545",
+    "pexelsUrl": "https://www.pexels.com/photo/grand-interior-of-circular-library-with-bookshelves-29861708/"
+  },
+  {
+    "categorySlug": "toys-kids",
+    "categoryName": "Toys & Kids",
+    "productName": "Kids Drawing Kit",
+    "imageNumber": 1,
+    "imageFile": "images/products/toys-kids/kids-drawing-kit-1.jpg",
+    "photographer": "Ismael Abdal Naby studio",
+    "photographerUrl": "https://www.pexels.com/@ismaelabdalnabystudio",
+    "pexelsUrl": "https://www.pexels.com/photo/pink-toys-fork-and-spoon-20387931/"
+  },
+  {
+    "categorySlug": "toys-kids",
+    "categoryName": "Toys & Kids",
+    "productName": "Educational Puzzle",
+    "imageNumber": 1,
+    "imageFile": "images/products/toys-kids/educational-puzzle-1.jpg",
+    "photographer": "Jul Chi",
+    "photographerUrl": "https://www.pexels.com/@jul-chi-2704066",
+    "pexelsUrl": "https://www.pexels.com/photo/wooden-carvings-of-an-elephant-family-4309152/"
+  },
+  {
+    "categorySlug": "toys-kids",
+    "categoryName": "Toys & Kids",
+    "productName": "Barbie Fashion Doll",
+    "imageNumber": 1,
+    "imageFile": "images/products/toys-kids/barbie-fashion-doll-1.jpg",
+    "photographer": "David Yu",
+    "photographerUrl": "https://www.pexels.com/@pppsdavid",
+    "pexelsUrl": "https://www.pexels.com/photo/photograph-of-a-ragdoll-kitten-playing-with-a-toy-10914514/"
+  },
+  {
+    "categorySlug": "toys-kids",
+    "categoryName": "Toys & Kids",
+    "productName": "Stuffed Teddy Bear",
+    "imageNumber": 1,
+    "imageFile": "images/products/toys-kids/stuffed-teddy-bear-1.jpg",
+    "photographer": "betū🦭",
+    "photographerUrl": "https://www.pexels.com/@betu-48866491",
+    "pexelsUrl": "https://www.pexels.com/photo/purple-teddy-bear-stuffed-toy-near-babys-breath-flowers-7738663/"
+  },
+  {
+    "categorySlug": "toys-kids",
+    "categoryName": "Toys & Kids",
+    "productName": "Toy Kitchen Set",
+    "imageNumber": 1,
+    "imageFile": "images/products/toys-kids/toy-kitchen-set-1.jpg",
+    "photographer": "Derek Finch",
+    "photographerUrl": "https://www.pexels.com/@drugwatcher",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-shot-of-a-stuffed-toy-9551731/"
+  },
+  {
+    "categorySlug": "toys-kids",
+    "categoryName": "Toys & Kids",
+    "productName": "Kids Scooter",
+    "imageNumber": 1,
+    "imageFile": "images/products/toys-kids/kids-scooter-1.jpg",
+    "photographer": "Denisse Villar",
+    "photographerUrl": "https://www.pexels.com/@denissevillar",
+    "pexelsUrl": "https://www.pexels.com/photo/pink-minnie-mouse-chair-with-christmas-tree-decor-31467597/"
+  },
+  {
+    "categorySlug": "toys-kids",
+    "categoryName": "Toys & Kids",
+    "productName": "Board Game",
+    "imageNumber": 1,
+    "imageFile": "images/products/toys-kids/board-game-1.jpg",
+    "photographer": "Karen Laårk Boshoff",
+    "photographerUrl": "https://www.pexels.com/@laarkstudio",
+    "pexelsUrl": "https://www.pexels.com/photo/a-stuff-toy-wearing-sunglasses-8125848/"
+  },
+  {
+    "categorySlug": "groceries-beverages",
+    "categoryName": "Groceries & Beverages",
+    "productName": "Breakfast Cereal",
+    "imageNumber": 1,
+    "imageFile": "images/products/groceries-beverages/breakfast-cereal-1.jpg",
+    "photographer": "Zülfü Demir📸",
+    "photographerUrl": "https://www.pexels.com/@zlfdmr23",
+    "pexelsUrl": "https://www.pexels.com/photo/traditional-turkish-breakfast-spread-with-eggs-39964974/"
+  },
+  {
+    "categorySlug": "groceries-beverages",
+    "categoryName": "Groceries & Beverages",
+    "productName": "Peanut Butter",
+    "imageNumber": 1,
+    "imageFile": "images/products/groceries-beverages/peanut-butter-1.jpg",
+    "photographer": "Athul karuva",
+    "photographerUrl": "https://www.pexels.com/@athul-karuva-757704066",
+    "pexelsUrl": "https://www.pexels.com/photo/traditional-south-indian-breakfast-with-vada-and-coffee-40047851/"
+  },
+  {
+    "categorySlug": "groceries-beverages",
+    "categoryName": "Groceries & Beverages",
+    "productName": "Instant Coffee",
+    "imageNumber": 1,
+    "imageFile": "images/products/groceries-beverages/instant-coffee-1.jpg",
+    "photographer": "Nadiye Şamlı",
+    "photographerUrl": "https://www.pexels.com/@nadiye-samli-633420477",
+    "pexelsUrl": "https://www.pexels.com/photo/healthy-breakfast-with-coffee-and-granola-bowl-31596348/"
+  },
+  {
+    "categorySlug": "groceries-beverages",
+    "categoryName": "Groceries & Beverages",
+    "productName": "Dark Chocolate",
+    "imageNumber": 1,
+    "imageFile": "images/products/groceries-beverages/dark-chocolate-1.jpg",
+    "photographer": "C P",
+    "photographerUrl": "https://www.pexels.com/@c-p-221095640",
+    "pexelsUrl": "https://www.pexels.com/photo/coriander-seeds-on-black-surface-14430641/"
+  },
+  {
+    "categorySlug": "groceries-beverages",
+    "categoryName": "Groceries & Beverages",
+    "productName": "Mixed Nuts",
+    "imageNumber": 1,
+    "imageFile": "images/products/groceries-beverages/mixed-nuts-1.jpg",
+    "photographer": "Christina Voinova",
+    "photographerUrl": "https://www.pexels.com/@christina-voinova-42707474",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-walnuts-cabbage-and-other-food-7368064/"
+  },
+  {
+    "categorySlug": "groceries-beverages",
+    "categoryName": "Groceries & Beverages",
+    "productName": "Olive Oil",
+    "imageNumber": 1,
+    "imageFile": "images/products/groceries-beverages/olive-oil-1.jpg",
+    "photographer": "Marcelo Verfe",
+    "photographerUrl": "https://www.pexels.com/@marceloverfe",
+    "pexelsUrl": "https://www.pexels.com/photo/ingredients-for-pasta-and-different-kinds-of-pasta-on-the-table-16620746/"
+  },
+  {
+    "categorySlug": "groceries-beverages",
+    "categoryName": "Groceries & Beverages",
+    "productName": "Oats",
+    "imageNumber": 1,
+    "imageFile": "images/products/groceries-beverages/oats-1.jpg",
+    "photographer": "Tara Clark",
+    "photographerUrl": "https://www.pexels.com/@tara-clark-89384110",
+    "pexelsUrl": "https://www.pexels.com/photo/a-person-holding-a-basket-9070120/"
+  },
+  {
+    "categorySlug": "jewelry",
+    "categoryName": "Jewelry",
+    "productName": "Diamond Earrings",
+    "imageNumber": 1,
+    "imageFile": "images/products/jewelry/diamond-earrings-1.jpg",
+    "photographer": "Diun group",
+    "photographerUrl": "https://www.pexels.com/@diun-group-1148420145",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-golden-earrings-21235147/"
+  },
+  {
+    "categorySlug": "jewelry",
+    "categoryName": "Jewelry",
+    "productName": "Fashion Necklace",
+    "imageNumber": 1,
+    "imageFile": "images/products/jewelry/fashion-necklace-1.jpg",
+    "photographer": "The Glorious  Studio",
+    "photographerUrl": "https://www.pexels.com/@the-glorious-studio-3584518",
+    "pexelsUrl": "https://www.pexels.com/photo/silver-and-gold-jewelries-in-close-up-photography-8891953/"
+  },
+  {
+    "categorySlug": "jewelry",
+    "categoryName": "Jewelry",
+    "productName": "Couple Rings",
+    "imageNumber": 1,
+    "imageFile": "images/products/jewelry/couple-rings-1.jpg",
+    "photographer": "The Glorious  Studio",
+    "photographerUrl": "https://www.pexels.com/@the-glorious-studio-3584518",
+    "pexelsUrl": "https://www.pexels.com/photo/necklace-and-earrings-set-on-the-empty-container-8891955/"
+  },
+  {
+    "categorySlug": "jewelry",
+    "categoryName": "Jewelry",
+    "productName": "Pearl Necklace",
+    "imageNumber": 1,
+    "imageFile": "images/products/jewelry/pearl-necklace-1.jpg",
+    "photographer": "The Glorious  Studio",
+    "photographerUrl": "https://www.pexels.com/@the-glorious-studio-3584518",
+    "pexelsUrl": "https://www.pexels.com/photo/set-of-silver-jewelries-with-diamonds-and-gems-6716444/"
+  },
+  {
+    "categorySlug": "jewelry",
+    "categoryName": "Jewelry",
+    "productName": "Stud Earrings",
+    "imageNumber": 1,
+    "imageFile": "images/products/jewelry/stud-earrings-1.jpg",
+    "photographer": "The Glorious  Studio",
+    "photographerUrl": "https://www.pexels.com/@the-glorious-studio-3584518",
+    "pexelsUrl": "https://www.pexels.com/photo/golden-earrings-with-diamonds-20943478/"
+  },
+  {
+    "categorySlug": "jewelry",
+    "categoryName": "Jewelry",
+    "productName": "Charm Bracelet",
+    "imageNumber": 1,
+    "imageFile": "images/products/jewelry/charm-bracelet-1.jpg",
+    "photographer": "Yusuf Çelik",
+    "photographerUrl": "https://www.pexels.com/@zandatsu",
+    "pexelsUrl": "https://www.pexels.com/photo/elegant-gold-jewelry-set-with-ginkgo-leaf-design-29503018/"
+  },
+  {
+    "categorySlug": "jewelry",
+    "categoryName": "Jewelry",
+    "productName": "Gold Chain",
+    "imageNumber": 1,
+    "imageFile": "images/products/jewelry/gold-chain-1.jpg",
+    "photographer": "Yusuf Çelik",
+    "photographerUrl": "https://www.pexels.com/@zandatsu",
+    "pexelsUrl": "https://www.pexels.com/photo/elegant-gold-jewelry-set-on-white-background-29502923/"
+  },
+  {
+    "categorySlug": "automotive",
+    "categoryName": "Automotive",
+    "productName": "Car Seat Cover",
+    "imageNumber": 1,
+    "imageFile": "images/products/automotive/car-seat-cover-1.jpg",
+    "photographer": "Wildfire 1775",
+    "photographerUrl": "https://www.pexels.com/@meetjoeblack",
+    "pexelsUrl": "https://www.pexels.com/photo/vibrant-yellow-sports-car-at-seattle-auto-show-37261992/"
+  },
+  {
+    "categorySlug": "automotive",
+    "categoryName": "Automotive",
+    "productName": "Car Air Purifier",
+    "imageNumber": 1,
+    "imageFile": "images/products/automotive/car-air-purifier-1.jpg",
+    "photographer": "Furkan  Aktaş",
+    "photographerUrl": "https://www.pexels.com/@furkanakt",
+    "pexelsUrl": "https://www.pexels.com/photo/blue-bmw-car-24800195/"
+  },
+  {
+    "categorySlug": "automotive",
+    "categoryName": "Automotive",
+    "productName": "Motorcycle Helmet",
+    "imageNumber": 1,
+    "imageFile": "images/products/automotive/motorcycle-helmet-1.jpg",
+    "photographer": "Eric Joseph",
+    "photographerUrl": "https://www.pexels.com/@ericc",
+    "pexelsUrl": "https://www.pexels.com/photo/vintage-sports-car-interior-close-up-with-wooden-steering-wheel-38728767/"
+  },
+  {
+    "categorySlug": "automotive",
+    "categoryName": "Automotive",
+    "productName": "Tyre Inflator",
+    "imageNumber": 1,
+    "imageFile": "images/products/automotive/tyre-inflator-1.jpg",
+    "photographer": "Mohit Hambiria",
+    "photographerUrl": "https://www.pexels.com/@mohit-hambiria-92377455",
+    "pexelsUrl": "https://www.pexels.com/photo/aston-martin-car-key-in-hand-20435121/"
+  },
+  {
+    "categorySlug": "automotive",
+    "categoryName": "Automotive",
+    "productName": "Jump Starter",
+    "imageNumber": 1,
+    "imageFile": "images/products/automotive/jump-starter-1.jpg",
+    "photographer": "Bulat843 🌙",
+    "photographerUrl": "https://www.pexels.com/@bulat843-1243575272",
+    "pexelsUrl": "https://www.pexels.com/photo/sleek-red-car-in-modern-garage-setting-38218175/"
+  },
+  {
+    "categorySlug": "automotive",
+    "categoryName": "Automotive",
+    "productName": "Car Cleaning Kit",
+    "imageNumber": 1,
+    "imageFile": "images/products/automotive/car-cleaning-kit-1.jpg",
+    "photographer": "Burak The Weekender",
+    "photographerUrl": "https://www.pexels.com/@weekendplayer",
+    "pexelsUrl": "https://www.pexels.com/photo/white-and-black-car-parked-86993/"
+  },
+  {
+    "categorySlug": "automotive",
+    "categoryName": "Automotive",
+    "productName": "Riding Gloves",
+    "imageNumber": 1,
+    "imageFile": "images/products/automotive/riding-gloves-1.jpg",
+    "photographer": "Eric Joseph",
+    "photographerUrl": "https://www.pexels.com/@ericc",
+    "pexelsUrl": "https://www.pexels.com/photo/vintage-car-dashboard-with-driving-gloves-38728762/"
+  },
+  {
+    "categorySlug": "pet-supplies",
+    "categoryName": "Pet Supplies",
+    "productName": "Interactive Dog Toy",
+    "imageNumber": 1,
+    "imageFile": "images/products/pet-supplies/interactive-dog-toy-1.jpg",
+    "photographer": "Christian Gazzabini",
+    "photographerUrl": "https://www.pexels.com/@christian-gazzabini-2151814269",
+    "pexelsUrl": "https://www.pexels.com/photo/playful-beagle-with-toy-ball-in-sunny-yard-32070609/"
+  },
+  {
+    "categorySlug": "pet-supplies",
+    "categoryName": "Pet Supplies",
+    "productName": "Pet Grooming Kit",
+    "imageNumber": 1,
+    "imageFile": "images/products/pet-supplies/pet-grooming-kit-1.jpg",
+    "photographer": "Peter Jochim",
+    "photographerUrl": "https://www.pexels.com/@peterjochim-fotografie",
+    "pexelsUrl": "https://www.pexels.com/photo/relaxed-dachshund-basking-in-sunlight-indoors-37077527/"
+  },
+  {
+    "categorySlug": "pet-supplies",
+    "categoryName": "Pet Supplies",
+    "productName": "Pet Travel Bag",
+    "imageNumber": 1,
+    "imageFile": "images/products/pet-supplies/pet-travel-bag-1.jpg",
+    "photographer": "Impact Dog Crates",
+    "photographerUrl": "https://www.pexels.com/@impact-dog-crates-1789722873",
+    "pexelsUrl": "https://www.pexels.com/photo/pet-friendly-anti-chew-spray-for-dogs-28921814/"
+  },
+  {
+    "categorySlug": "pet-supplies",
+    "categoryName": "Pet Supplies",
+    "productName": "Cat Litter",
+    "imageNumber": 1,
+    "imageFile": "images/products/pet-supplies/cat-litter-1.jpg",
+    "photographer": "Alina Autumn",
+    "photographerUrl": "https://www.pexels.com/@alina-autumn-197681213",
+    "pexelsUrl": "https://www.pexels.com/photo/flock-of-cats-with-timber-house-painted-blue-in-background-11551694/"
+  },
+  {
+    "categorySlug": "pet-supplies",
+    "categoryName": "Pet Supplies",
+    "productName": "Water Bowl",
+    "imageNumber": 1,
+    "imageFile": "images/products/pet-supplies/water-bowl-1.jpg",
+    "photographer": "Barış Yiğit",
+    "photographerUrl": "https://www.pexels.com/@baris-yigit-239931604",
+    "pexelsUrl": "https://www.pexels.com/photo/white-cat-in-close-up-shot-13788415/"
+  },
+  {
+    "categorySlug": "pet-supplies",
+    "categoryName": "Pet Supplies",
+    "productName": "Pet Bed",
+    "imageNumber": 1,
+    "imageFile": "images/products/pet-supplies/pet-bed-1.jpg",
+    "photographer": "Impact Dog Crates",
+    "photographerUrl": "https://www.pexels.com/@impact-dog-crates-1789722873",
+    "pexelsUrl": "https://www.pexels.com/photo/anti-chew-spray-for-pet-owners-28921812/"
+  },
+  {
+    "categorySlug": "pet-supplies",
+    "categoryName": "Pet Supplies",
+    "productName": "Dog Leash",
+    "imageNumber": 1,
+    "imageFile": "images/products/pet-supplies/dog-leash-1.jpg",
+    "photographer": "Ad Thiry",
+    "photographerUrl": "https://www.pexels.com/@adthiry",
+    "pexelsUrl": "https://www.pexels.com/photo/person-walking-with-pet-dogs-12424394/"
+  },
+  {
+    "categorySlug": "office-stationery",
+    "categoryName": "Office & Stationery",
+    "productName": "Office Backpack",
+    "imageNumber": 1,
+    "imageFile": "images/products/office-stationery/office-backpack-1.jpg",
+    "photographer": "Jilly Noble",
+    "photographerUrl": "https://www.pexels.com/@jillyjillystudio",
+    "pexelsUrl": "https://www.pexels.com/photo/pink-office-supplies-on-a-minimalist-desk-29765813/"
+  },
+  {
+    "categorySlug": "office-stationery",
+    "categoryName": "Office & Stationery",
+    "productName": "Wireless Keyboard",
+    "imageNumber": 1,
+    "imageFile": "images/products/office-stationery/wireless-keyboard-1.jpg",
+    "photographer": "Drew Williams",
+    "photographerUrl": "https://www.pexels.com/@drew-williams-1285451",
+    "pexelsUrl": "https://www.pexels.com/photo/black-wireless-keyboard-beside-mouse-3143791/"
+  },
+  {
+    "categorySlug": "office-stationery",
+    "categoryName": "Office & Stationery",
+    "productName": "Desk Organizer",
+    "imageNumber": 1,
+    "imageFile": "images/products/office-stationery/desk-organizer-1.jpg",
+    "photographer": "Jilly Noble",
+    "photographerUrl": "https://www.pexels.com/@jillyjillystudio",
+    "pexelsUrl": "https://www.pexels.com/photo/modern-pink-office-desk-with-iphone-mockup-29765810/"
+  },
+  {
+    "categorySlug": "office-stationery",
+    "categoryName": "Office & Stationery",
+    "productName": "Wireless Mouse",
+    "imageNumber": 1,
+    "imageFile": "images/products/office-stationery/wireless-mouse-1.jpg",
+    "photographer": "Jilly Noble",
+    "photographerUrl": "https://www.pexels.com/@jillyjillystudio",
+    "pexelsUrl": "https://www.pexels.com/photo/pink-office-desk-with-smartphone-and-accessories-29765811/"
+  },
+  {
+    "categorySlug": "office-stationery",
+    "categoryName": "Office & Stationery",
+    "productName": "Office Chair",
+    "imageNumber": 1,
+    "imageFile": "images/products/office-stationery/office-chair-1.jpg",
+    "photographer": "Craig Adderley",
+    "photographerUrl": "https://www.pexels.com/@thatguycraig000",
+    "pexelsUrl": "https://www.pexels.com/photo/man-laughing-while-sitting-on-office-chair-1546912/"
+  },
+  {
+    "categorySlug": "office-stationery",
+    "categoryName": "Office & Stationery",
+    "productName": "Stapler",
+    "imageNumber": 1,
+    "imageFile": "images/products/office-stationery/stapler-1.jpg",
+    "photographer": "Jilly Noble",
+    "photographerUrl": "https://www.pexels.com/@jillyjillystudio",
+    "pexelsUrl": "https://www.pexels.com/photo/stylish-pink-office-desk-flat-lay-with-stationery-29765795/"
+  },
+  {
+    "categorySlug": "office-stationery",
+    "categoryName": "Office & Stationery",
+    "productName": "Printer",
+    "imageNumber": 1,
+    "imageFile": "images/products/office-stationery/printer-1.jpg",
+    "photographer": "Leandro Queiroz",
+    "photographerUrl": "https://www.pexels.com/@leandro-queiroz-441796143",
+    "pexelsUrl": "https://www.pexels.com/photo/cozy-office-with-warm-sunset-lighting-28962928/"
+  },
+  {
+    "categorySlug": "travel-gear",
+    "categoryName": "Travel Gear",
+    "productName": "Toiletry Bag",
+    "imageNumber": 1,
+    "imageFile": "images/products/travel-gear/toiletry-bag-1.jpg",
+    "photographer": "Kuiyibo Campos",
+    "photographerUrl": "https://www.pexels.com/@kuiyibo",
+    "pexelsUrl": "https://www.pexels.com/photo/man-in-suit-with-bag-12185075/"
+  },
+  {
+    "categorySlug": "travel-gear",
+    "categoryName": "Travel Gear",
+    "productName": "Packing Cubes",
+    "imageNumber": 1,
+    "imageFile": "images/products/travel-gear/packing-cubes-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/close-up-of-white-bag-27174570/"
+  },
+  {
+    "categorySlug": "travel-gear",
+    "categoryName": "Travel Gear",
+    "productName": "Travel Adapter",
+    "imageNumber": 1,
+    "imageFile": "images/products/travel-gear/travel-adapter-1.jpg",
+    "photographer": "José Martin Segura Benites",
+    "photographerUrl": "https://www.pexels.com/@jose-martin-segura-benites-1422456152",
+    "pexelsUrl": "https://www.pexels.com/photo/green-bag-on-yellow-background-27174571/"
+  },
+  {
+    "categorySlug": "travel-gear",
+    "categoryName": "Travel Gear",
+    "productName": "Passport Holder",
+    "imageNumber": 1,
+    "imageFile": "images/products/travel-gear/passport-holder-1.jpg",
+    "photographer": "Ian",
+    "photographerUrl": "https://www.pexels.com/@ian-1905462846",
+    "pexelsUrl": "https://www.pexels.com/photo/romantic-embrace-on-a-bustling-city-street-39576271/"
+  },
+  {
+    "categorySlug": "travel-gear",
+    "categoryName": "Travel Gear",
+    "productName": "Travel Duffel Bag",
+    "imageNumber": 1,
+    "imageFile": "images/products/travel-gear/travel-duffel-bag-1.jpg",
+    "photographer": "Suzy Hazelwood",
+    "photographerUrl": "https://www.pexels.com/@suzyhazelwood",
+    "pexelsUrl": "https://www.pexels.com/photo/classic-commercial-vehicle-on-asphalt-road-3876855/"
+  },
+  {
+    "categorySlug": "travel-gear",
+    "categoryName": "Travel Gear",
+    "productName": "Camping Tent",
+    "imageNumber": 1,
+    "imageFile": "images/products/travel-gear/camping-tent-1.jpg",
+    "photographer": "Scott Hayward",
+    "photographerUrl": "https://www.pexels.com/@scottydog4000",
+    "pexelsUrl": "https://www.pexels.com/photo/passengers-boarding-a-ryanair-airplane-at-airport-35413287/"
+  },
+  {
+    "categorySlug": "travel-gear",
+    "categoryName": "Travel Gear",
+    "productName": "Neck Pillow",
+    "imageNumber": 1,
+    "imageFile": "images/products/travel-gear/neck-pillow-1.jpg",
+    "photographer": "Vitaliy  Izonin",
+    "photographerUrl": "https://www.pexels.com/@izonin",
+    "pexelsUrl": "https://www.pexels.com/photo/red-handbags-on-green-cushions-19869755/"
+  }
+]

@@ -45,6 +45,7 @@ const ProductCard = ({ data }) => {
   const price = data?.discountPrice ?? data?.price ?? 0;
   const hasDiscount = data?.discountPrice != null && Number(data.discountPrice) < Number(data.price);
   const image = data?.thumbnail || data?.images?.[0] || "https://placehold.co/800x700?text=ShopSphere";
+  const imageCredit = data?.imageAttributions?.find((credit) => credit.imageNumber === 1);
 
   const add = async () => {
     if (!isAuthenticated) {
@@ -92,6 +93,35 @@ const ProductCard = ({ data }) => {
               }}
             />
           </Link>
+
+          {imageCredit && (
+            <Typography
+              variant="caption"
+              sx={{
+                position: "absolute",
+                right: 0,
+                bottom: 0,
+                left: 0,
+                px: 1,
+                py: 0.35,
+                color: "#fff",
+                bgcolor: "rgba(15, 23, 42, 0.72)",
+                textAlign: "center",
+                fontSize: "0.65rem",
+              }}
+            >
+              Photo by{" "}
+              <a
+                href={imageCredit.photoUrl}
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: "inherit", textDecoration: "underline" }}
+              >
+                {imageCredit.photographer}
+              </a>{" "}
+              on <a href="https://www.pexels.com" target="_blank" rel="noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>Pexels</a>
+            </Typography>
+          )}
 
           {hasDiscount && (
             <Chip
