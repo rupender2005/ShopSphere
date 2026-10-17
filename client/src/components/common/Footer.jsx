@@ -8,9 +8,11 @@ import Grid from "@mui/material/Grid";
 import MuiLink from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import useAuthStore from "../../store/authStore";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
   const footerLinks = [
     {
@@ -32,24 +34,15 @@ const Footer = () => {
     },
     {
       title: "Account",
-      links: [
-        {
-          label: "Login",
-          path: "/login",
-        },
-        {
-          label: "Create Account",
-          path: "/signup",
-        },
-        {
-          label: "Profile",
-          path: "/profile",
-        },
-        {
-          label: "Orders",
-          path: "/orders",
-        },
-      ],
+      links: isAuthenticated
+        ? [
+            { label: "Profile", path: "/profile" },
+            { label: "Orders", path: "/orders" },
+          ]
+        : [
+            { label: "Login", path: "/login" },
+            { label: "Create Account", path: "/signup" },
+          ],
     },
   ];
 
