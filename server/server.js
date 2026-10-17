@@ -44,13 +44,21 @@ const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173")
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
+const isShopSphereVercelDeployment = (origin) =>
+  /^https:\/\/shopsphere-(?:git-[a-z0-9-]+|[a-z0-9]{6,})-rupender-singhs-projects\.vercel\.app$/i.test(
+    origin,
+  );
 
 // Middleware
 app.use(
   cors({
     origin(origin, callback) {
       // Allow requests without an Origin header
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (
+        !origin ||
+        allowedOrigins.includes(origin) ||
+        isShopSphereVercelDeployment(origin)
+      ) {
         return callback(null, true);
       }
 
