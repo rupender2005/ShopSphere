@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
+  Alert,
   Box,
   Button,
   Card,
@@ -9,6 +10,7 @@ import {
   Chip,
   Divider,
   Rating,
+  Snackbar,
   Stack,
   Typography,
 } from "@mui/material";
@@ -19,9 +21,26 @@ import AuthRequiredDialog from "../common/AuthRequiredDialog";
 const ProductCard = ({ data }) => {
   const [loading, setLoading] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
+  const [cartFeedback, setCartFeedback] = useState(null);
 
   const addToCart = useCartStore((state) => state.addToCart);
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+
+  const addItemToCart = async () => {
+    setLoading(true);
+    setCartFeedback(null);
+    try {
+      await addToCart(data._id, 1);
+      setCartFeedback({ severity: "success", message: "Added to cart." });
+    } catch (error) {
+      setCartFeedback({
+        severity: "error",
+        message: error?.message || "Unable to add this product to your cart.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const price = data?.discountPrice ?? data?.price ?? 0;
   const hasDiscount = data?.discountPrice != null && Number(data.discountPrice) < Number(data.price);
@@ -33,22 +52,10 @@ const ProductCard = ({ data }) => {
       return;
     }
 
-    setLoading(true);
-    try {
-      await addToCart(data._id, 1);
-    } finally {
-      setLoading(false);
-    }
+    await addItemToCart();
   };
 
-  const addAfterAuthentication = async () => {
-    setLoading(true);
-    try {
-      await addToCart(data._id, 1);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const addAfterAuthentication = addItemToCart;
 
   return (
     <>
@@ -191,6 +198,28 @@ const ProductCard = ({ data }) => {
         onClose={() => setAuthOpen(false)}
         onAuthenticated={addAfterAuthentication}
       />
+
+      <Snackbar
+        open={Boolean(cartFeedback)}
+        autoHideDuration={5000}
+        onClose={() => setCartFeedback(null)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          severity={cartFeedback?.severity || "success"}
+          variant="filled"
+          onClose={() => setCartFeedback(null)}
+          action={
+            cartFeedback?.severity === "success" ? (
+              <Button component={Link} to="/cart" color="inherit" size="small">
+                View cart
+              </Button>
+            ) : undefined
+          }
+        >
+          {cartFeedback?.message}
+        </Alert>
+      </Snackbar>
     </>
   );
 };

@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
-    "test": "node --test tests/products-page.contract.test.mjs",
+    "test": "node --test",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   Alert,
   Box,
@@ -8,6 +8,7 @@ import {
   Divider,
   IconButton,
   Rating,
+  Snackbar,
   Stack,
   TextField,
   Typography,
@@ -22,7 +23,6 @@ import Loader from "../../components/common/Loader";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const addToCart = useCartStore((state) => state.addToCart);
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
@@ -35,6 +35,7 @@ const ProductDetail = () => {
   const [rating, setRating] = useState(5);
   const [comment, setComment] = useState("");
   const [error, setError] = useState("");
+  const [cartNotice, setCartNotice] = useState("");
 
   useEffect(() => {
     Promise.all([
@@ -71,10 +72,13 @@ const ProductDetail = () => {
 
     setBusy(true);
     setError("");
+    setCartNotice("");
 
     try {
       await addToCart(product._id, quantity);
-      navigate("/cart");
+      setCartNotice(
+        quantity === 1 ? "Added to cart." : `${quantity} items added to cart.`,
+      );
     } catch (requestError) {
       setError(
         requestError.message || "Unable to add this product to your cart.",
@@ -87,10 +91,13 @@ const ProductDetail = () => {
   const addAfterAuthentication = async () => {
     setBusy(true);
     setError("");
+    setCartNotice("");
 
     try {
       await addToCart(product._id, quantity);
-      navigate("/cart");
+      setCartNotice(
+        quantity === 1 ? "Added to cart." : `${quantity} items added to cart.`,
+      );
     } catch (requestError) {
       setError(
         requestError.message || "Unable to add this product to your cart.",
@@ -322,6 +329,26 @@ const ProductDetail = () => {
           ))
         )}
       </Container>
+
+      <Snackbar
+        open={Boolean(cartNotice)}
+        autoHideDuration={5000}
+        onClose={() => setCartNotice("")}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          severity="success"
+          variant="filled"
+          onClose={() => setCartNotice("")}
+          action={
+            <Button component={Link} to="/cart" color="inherit" size="small">
+              View cart
+            </Button>
+          }
+        >
+          {cartNotice}
+        </Alert>
+      </Snackbar>
 
       <AuthRequiredDialog
         open={authOpen}
