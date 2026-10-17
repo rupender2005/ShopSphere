@@ -1,31 +1,42 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Container, Typography, Box, Button } from "@mui/material";
 import categoryService from "../../services/categoryService";
 import productService from "../../services/productService";
 import ProductCard from "../../components/product/ProductCard";
 import Loader from "../../components/common/Loader";
+import ApiError from "../../components/common/ApiError";
 const CategoryProducts = () => {
   const { id } = useParams();
   const [category, setCategory] = useState(null),
     [products, setProducts] = useState([]),
-    [loading, setLoading] = useState(true);
-  useEffect(() => {
-    Promise.all([
-      categoryService.getCategory(id),
-      productService.getProducts({ category: id, limit: 50 }),
-    ])
-      .then(([c, p]) => {
-        setCategory(c.data);
-        setProducts(p.data?.products || []);
-      })
-      .catch(() => {})
-      .finally(() => setLoading(false));
+    [loading, setLoading] = useState(true),
+    [error, setError] = useState("");
+  const loadCategory = useCallback(async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const [categoryResponse, productsResponse] = await Promise.all([
+        categoryService.getCategory(id),
+        productService.getProducts({ category: id, limit: 50 }),
+      ]);
+      setCategory(categoryResponse.data);
+      setProducts(productsResponse.data?.products || []);
+    } catch (requestError) {
+      setError(requestError.message || "Unable to load this category.");
+    } finally {
+      setLoading(false);
+    }
   }, [id]);
+  useEffect(() => {
+    loadCategory();
+  }, [loadCategory]);
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
       {loading ? (
         <Loader />
+      ) : error ? (
+        <ApiError message={error} onRetry={loadCategory} />
       ) : (
         <>
           <Typography variant="h3" fontWeight={800}>

@@ -20,6 +20,7 @@ import useCartStore from "../../store/cartStore";
 import useAuthStore from "../../store/authStore";
 import AuthRequiredDialog from "../../components/common/AuthRequiredDialog";
 import Loader from "../../components/common/Loader";
+import SafeImage from "../../components/common/SafeImage";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -140,13 +141,8 @@ const ProductDetail = () => {
           }}
         >
           <Box>
-            <Box
-              component="img"
-              src={
-                product.thumbnail ||
-                product.images?.[0] ||
-                "https://placehold.co/700x700?text=ShopSphere"
-              }
+            <SafeImage
+              src={product.thumbnail || product.images?.[0]}
               alt={product.name}
               sx={{
                 width: "100%",

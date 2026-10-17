@@ -152,8 +152,15 @@ const orderSchema = new mongoose.Schema(
 
     paymentStatus: {
       type: String,
-      enum: ["Pending", "Paid", "Failed", "Refunded"],
+      enum: ["Pending", "Paid", "Failed", "Refunded", "Refund pending"],
       default: "Pending",
+    },
+
+    // Legacy orders already reduced stock at order creation; new Razorpay
+    // orders set this to false until a captured payment is confirmed.
+    inventoryDeducted: {
+      type: Boolean,
+      default: true,
     },
 
     orderStatus: {
@@ -175,9 +182,19 @@ const orderSchema = new mongoose.Schema(
       default: "",
     },
 
+    razorpayOrderIds: {
+      type: [String],
+      default: [],
+    },
+
     razorpayPaymentId: {
       type: String,
       required: false,
+      default: "",
+    },
+
+    razorpayRefundId: {
+      type: String,
       default: "",
     },
 

@@ -125,10 +125,19 @@ const getProductsQuerySchema = z.object({
   search: z.string().trim().max(100).optional(),
   minPrice: z.coerce.number().min(0).optional(),
   maxPrice: z.coerce.number().min(0).optional(),
+  minRating: z.coerce.number().min(0).max(5).optional(),
+  sort: z.enum(["newest", "price-asc", "price-desc", "rating"]).optional(),
   featured: z.enum(["true", "false"]).optional(),
   page: z.coerce.number().int().positive().default(1),
   limit: z.coerce.number().int().positive().max(50).default(10),
-});
+}).refine(
+  ({ minPrice, maxPrice }) =>
+    minPrice === undefined || maxPrice === undefined || minPrice <= maxPrice,
+  {
+    message: "Minimum price cannot be greater than maximum price",
+    path: ["minPrice"],
+  },
+);
 
 module.exports = {
   createProductSchema,

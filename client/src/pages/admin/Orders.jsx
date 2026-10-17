@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
+  Alert,
   Box,
   Container,
   MenuItem,
@@ -9,6 +10,9 @@ import {
   Typography,
 } from "@mui/material";
 import adminService from "../../services/adminService";
+import Loader from "../../components/common/Loader";
+import ApiError from "../../components/common/ApiError";
+
 const statuses = [
   "Pending",
   "Confirmed",
@@ -17,56 +21,117 @@ const statuses = [
   "Delivered",
   "Cancelled",
 ];
+
 const Orders = () => {
-  const [o, setO] = useState([]);
-  const load = () =>
-    adminService
-      .getOrders()
-      .then((r) => setO(Array.isArray(r.data) ? r.data : []));
-  useEffect(() => {
-    load();
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [busyOrderId, setBusyOrderId] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [reloadKey, setReloadKey] = useState(0);
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const response = await adminService.getOrders();
+      setOrders(Array.isArray(response.data) ? response.data : []);
+    } catch (requestError) {
+      setError(requestError.message || "Unable to load orders.");
+      throw requestError;
+    } finally {
+      setLoading(false);
+    }
   }, []);
-  const change = async (id, status) => {
-    await adminService.updateOrderStatus(id, status);
-    load();
+
+  useEffect(() => {
+    load().catch(() => {});
+  }, [load, reloadKey]);
+
+  const changeStatus = async (orderId, status) => {
+    setBusyOrderId(orderId);
+    setError("");
+    setSuccess("");
+    try {
+      await adminService.updateOrderStatus(orderId, status);
+      await load();
+      setSuccess(`Order #${orderId.slice(-8)} updated to ${status}.`);
+    } catch (requestError) {
+      setError(requestError.message || "Unable to update this order.");
+    } finally {
+      setBusyOrderId("");
+    }
   };
+
+  if (loading) return <Loader />;
+
   return (
     <Container maxWidth="lg" sx={{ py: 5 }}>
       <Typography variant="h3" fontWeight={800} mb={4}>
         Orders
       </Typography>
-      {o.map((x) => (
-        <Paper key={x._id} sx={{ p: 3, mb: 2 }}>
-          <Stack
-            direction={{ xs: "column", md: "row" }}
-            justifyContent="space-between"
-            gap={2}
-          >
-            <Box>
-              <Typography fontWeight={800}>#{x._id.slice(-8)}</Typography>
-              <Typography color="text.secondary">
-                {x.user?.name} · {x.user?.email}
-              </Typography>
-              <Typography mt={1}>
-                ₹{Number(x.totalAmount).toFixed(2)} ·{" "}
-                {new Date(x.createdAt).toLocaleDateString()}
-              </Typography>
-            </Box>
-            <Select
-              size="small"
-              value={x.orderStatus}
-              onChange={(e) => change(x._id, e.target.value)}
+      {error && (
+        <Box sx={{ mb: 2 }}>
+          <ApiError
+            message={error}
+            onRetry={() => setReloadKey((key) => key + 1)}
+          />
+        </Box>
+      )}
+      {success && !error && (
+        <Alert severity="success" sx={{ mb: 2 }} onClose={() => setSuccess("")}>
+          {success}
+        </Alert>
+      )}
+      {orders.length === 0 && !error ? (
+        <Typography color="text.secondary">There are no orders yet.</Typography>
+      ) : (
+        orders.map((order) => (
+          <Paper key={order._id} sx={{ p: 3, mb: 2 }}>
+            <Stack
+              direction={{ xs: "column", md: "row" }}
+              justifyContent="space-between"
+              alignItems={{ md: "center" }}
+              gap={2}
             >
-              {statuses.map((s) => (
-                <MenuItem key={s} value={s}>
-                  {s}
-                </MenuItem>
-              ))}
-            </Select>
-          </Stack>
-        </Paper>
-      ))}
+              <Box>
+                <Typography fontWeight={800}>
+                  Order #{order._id.slice(-8)}
+                </Typography>
+                <Typography color="text.secondary">
+                  {order.user?.name || "Customer"} · {order.user?.email || ""}
+                </Typography>
+                <Typography mt={1}>
+                  ₹{Number(order.totalAmount).toFixed(2)} ·{" "}
+                  {new Date(order.createdAt).toLocaleDateString()}
+                </Typography>
+              </Box>
+              <Select
+                size="small"
+                aria-label={`Order ${order._id.slice(-8)} status`}
+                value={order.orderStatus}
+                disabled={busyOrderId === order._id}
+                onChange={(event) =>
+                  changeStatus(order._id, event.target.value)
+                }
+              >
+                {statuses.map((status) => (
+                  <MenuItem key={status} value={status}>
+                    {status}
+                  </MenuItem>
+                ))}
+              </Select>
+              {busyOrderId === order._id && (
+                <Typography variant="body2" color="text.secondary">
+                  Saving status…
+                </Typography>
+              )}
+            </Stack>
+          </Paper>
+        ))
+      )}
     </Container>
   );
 };
+
 export default Orders;

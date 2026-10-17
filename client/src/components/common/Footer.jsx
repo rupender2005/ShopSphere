@@ -44,6 +44,16 @@ const Footer = () => {
             { label: "Create Account", path: "/signup" },
           ],
     },
+    {
+      title: "Help & policies",
+      links: [
+        { label: "Shipping", path: "/help/shipping" },
+        { label: "Returns", path: "/help/returns" },
+        { label: "Contact", path: "/help/contact" },
+        { label: "Privacy", path: "/help/privacy" },
+        { label: "Terms", path: "/help/terms" },
+      ],
+    },
   ];
 
   return (
@@ -65,7 +75,7 @@ const Footer = () => {
           }}
         >
           {/* Brand */}
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}

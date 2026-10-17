@@ -12,6 +12,7 @@ import {
 import { Add, Delete, Remove } from "@mui/icons-material";
 import useCartStore from "../../store/cartStore";
 import Loader from "../../components/common/Loader";
+import SafeImage from "../../components/common/SafeImage";
 const Cart = () => {
   const { cart, isLoading, error, fetchCart, updateCartItem, removeFromCart } =
       useCartStore(),
@@ -59,13 +60,9 @@ const Cart = () => {
                 borderColor: "divider",
               }}
             >
-              <Box
-                component="img"
-                src={
-                  i.product.thumbnail ||
-                  i.product.images?.[0] ||
-                  "https://placehold.co/120"
-                }
+              <SafeImage
+                src={i.product.thumbnail || i.product.images?.[0]}
+                alt={`${i.product.name} product`}
                 sx={{
                   width: 100,
                   height: 100,
@@ -90,6 +87,7 @@ const Cart = () => {
                 <Stack direction="row" alignItems="center" gap={1} mt={1}>
                   <IconButton
                     size="small"
+                    aria-label={`Decrease quantity of ${i.product.name}`}
                     disabled={i.quantity <= 1}
                     onClick={() =>
                       updateCartItem(i.product._id, i.quantity - 1)
@@ -100,6 +98,7 @@ const Cart = () => {
                   <Typography>{i.quantity}</Typography>
                   <IconButton
                     size="small"
+                    aria-label={`Increase quantity of ${i.product.name}`}
                     disabled={i.quantity >= i.product.stock}
                     onClick={() =>
                       updateCartItem(i.product._id, i.quantity + 1)
@@ -111,6 +110,7 @@ const Cart = () => {
               </Box>
               <IconButton
                 color="error"
+                aria-label={`Remove ${i.product.name} from cart`}
                 onClick={() => removeFromCart(i.product._id)}
               >
                 <Delete />

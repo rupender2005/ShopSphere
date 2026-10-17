@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -14,24 +14,36 @@ import categoryService from "../services/categoryService";
 import ProductCard from "../components/product/ProductCard";
 import CategoryCard from "../components/category/CategoryCard";
 import Loader from "../components/common/Loader";
+import ApiError from "../components/common/ApiError";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  const loadHomeData = useCallback(async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const [productsResponse, categoriesResponse] = await Promise.all([
+        productService.getProducts({ featured: "true", limit: 8 }),
+        categoryService.getCategories(),
+      ]);
+      setProducts(productsResponse.data?.products || []);
+      setCategories(
+        Array.isArray(categoriesResponse.data) ? categoriesResponse.data : [],
+      );
+    } catch (requestError) {
+      setError(requestError.message || "Unable to load the home page data.");
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    Promise.all([
-      productService.getProducts({ featured: "true", limit: 8 }),
-      categoryService.getCategories(),
-    ])
-      .then(([p, c]) => {
-        setProducts(p.data?.products || []);
-        setCategories(Array.isArray(c.data) ? c.data : []);
-      })
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, []);
+    loadHomeData();
+  }, [loadHomeData]);
 
   return (
     <Box>
@@ -67,6 +79,10 @@ const Home = () => {
 
       <Box sx={{ bgcolor: "#f8fafc", py: { xs: 6, md: 8 } }}>
         <Container maxWidth="lg">
+          {error ? (
+            <ApiError message={error} onRetry={loadHomeData} />
+          ) : (
+            <>
           {categories.length > 0 && (
             <Box sx={{ mb: { xs: 7, md: 9 } }}>
               <Stack
@@ -216,6 +232,8 @@ const Home = () => {
               </Box>
             )}
           </Box>
+            </>
+          )}
         </Container>
       </Box>
     </Box>

@@ -7,6 +7,6 @@ test("product search keeps an explicit error state and resets pagination before 
 
   assert.match(source, /const \[error, setError\] = useState\(""\)/);
   assert.match(source, /setError\(requestError\.message/);
-  assert.match(source, /setPage\(1\);\s*setSearch\(searchInput\)/);
+  assert.match(source, /setPage\(1\);\s*setSearch\(searchInput\.trim\(\)\)/);
   assert.doesNotMatch(source, /catch\(\(\) => setProducts\(\[\]\)\)/);
 });

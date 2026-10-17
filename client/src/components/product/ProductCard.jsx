@@ -6,7 +6,6 @@ import {
   Button,
   Card,
   CardContent,
-  CardMedia,
   Chip,
   Divider,
   Rating,
@@ -17,6 +16,7 @@ import {
 import useCartStore from "../../store/cartStore";
 import useAuthStore from "../../store/authStore";
 import AuthRequiredDialog from "../common/AuthRequiredDialog";
+import SafeImage from "../common/SafeImage";
 
 const ProductCard = ({ data }) => {
   const [loading, setLoading] = useState(false);
@@ -44,7 +44,7 @@ const ProductCard = ({ data }) => {
 
   const price = data?.discountPrice ?? data?.price ?? 0;
   const hasDiscount = data?.discountPrice != null && Number(data.discountPrice) < Number(data.price);
-  const image = data?.thumbnail || data?.images?.[0] || "https://placehold.co/800x700?text=ShopSphere";
+  const image = data?.thumbnail || data?.images?.[0];
   const imageCredit = data?.imageAttributions?.find((credit) => credit.imageNumber === 1);
 
   const add = async () => {
@@ -81,10 +81,9 @@ const ProductCard = ({ data }) => {
       >
         <Box sx={{ position: "relative", bgcolor: "#f8fafc", overflow: "hidden" }}>
           <Link to={`/products/${data._id}`}>
-            <CardMedia
+            <SafeImage
               className="product-media"
-              component="img"
-              image={image}
+              src={image}
               alt={data?.name || "Product"}
               sx={{
                 aspectRatio: "1 / 1",

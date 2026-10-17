@@ -1,32 +1,53 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Button,
+  Box,
   Container,
   Paper,
   Stack,
   Typography,
   Chip,
+  Step,
+  StepLabel,
+  Stepper,
 } from "@mui/material";
 import orderService from "../../services/orderService";
 import Loader from "../../components/common/Loader";
+import PaymentButton from "../../components/checkout/PaymentButton";
+import ApiError from "../../components/common/ApiError";
+
+const deliverySteps = ["Order placed", "Confirmed", "Processing", "Shipped", "Delivered"];
+
 const OrderHistory = () => {
+  const navigate = useNavigate();
   const [o, setO] = useState([]),
-    [loading, setLoading] = useState(true);
-  useEffect(() => {
-    orderService
-      .getMyOrders()
-      .then((r) => setO(Array.isArray(r.data) ? r.data : []))
-      .catch(() => {})
-      .finally(() => setLoading(false));
+    [loading, setLoading] = useState(true),
+    [error, setError] = useState("");
+  const loadOrders = useCallback(async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const response = await orderService.getMyOrders();
+      setO(Array.isArray(response.data) ? response.data : []);
+    } catch (requestError) {
+      setError(requestError.message || "Unable to load your orders.");
+    } finally {
+      setLoading(false);
+    }
   }, []);
+  useEffect(() => {
+    loadOrders();
+  }, [loadOrders]);
   if (loading) return <Loader fullScreen />;
   return (
     <Container maxWidth="md" sx={{ py: 6 }}>
       <Typography variant="h3" fontWeight={800} mb={4}>
         My orders
       </Typography>
-      {!o.length ? (
+      {error ? (
+        <ApiError message={error} onRetry={loadOrders} />
+      ) : !o.length ? (
         <Typography color="text.secondary">
           You haven't placed any orders yet.
         </Typography>
@@ -44,18 +65,81 @@ const OrderHistory = () => {
             <Typography color="text.secondary" mt={1}>
               {new Date(x.createdAt).toLocaleString()}
             </Typography>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              alignItems={{ xs: "flex-start", sm: "center" }}
+              gap={1}
+              sx={{ mt: 2 }}
+            >
+              <Typography variant="body2" fontWeight={700}>
+                Payment
+              </Typography>
+              <Chip
+                size="small"
+                label={`${x.paymentMethod}: ${x.paymentStatus}`}
+                color={
+                  x.paymentStatus === "Paid"
+                    ? "success"
+                    : x.paymentStatus === "Refund pending"
+                      ? "warning"
+                      : "default"
+                }
+              />
+            </Stack>
+            {x.orderStatus === "Cancelled" ? (
+              <Typography color="text.secondary" variant="body2" sx={{ mt: 2 }}>
+                This order was cancelled.
+              </Typography>
+            ) : (
+              <BoxProgress status={x.orderStatus} />
+            )}
             <Typography fontWeight={700} mt={2}>
               ₹{Number(x.totalAmount).toFixed(2)}
             </Typography>
             <Button component={Link} to={`/orders/${x._id}`} sx={{ mt: 2 }}>
               View order
             </Button>
+            {x.paymentMethod === "Razorpay" &&
+              x.paymentStatus === "Pending" &&
+              x.orderStatus === "Pending" && (
+                <PaymentButton
+                  orderId={x._id}
+                  onSuccess={() => navigate(`/order-success?id=${x._id}`)}
+                />
+              )}
           </Paper>
         ))
       )}
     </Container>
   );
 };
+
+const BoxProgress = ({ status }) => {
+  const activeStep = Math.max(deliverySteps.indexOf(status), 0);
+  return (
+    <Box sx={{ mt: 2 }} aria-label={`Delivery progress: ${status}`}>
+      <Typography variant="body2" fontWeight={700} sx={{ mb: 1 }}>
+        Delivery progress: {status}
+      </Typography>
+      <Stepper activeStep={activeStep} alternativeLabel>
+        {deliverySteps.map((step) => (
+          <Step key={step}>
+            <StepLabel
+              sx={{
+                "& .MuiStepLabel-label": {
+                  fontSize: { xs: "0.65rem", sm: "0.75rem" },
+                },
+              }}
+            >
+              {step}
+            </StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+    </Box>
+  );
+};
+
 const BoxTitle = ({ id }) => (
   <Typography fontWeight={800}>Order #{id.slice(-8)}</Typography>
 );

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
+  Alert,
   Box,
   Button,
   Container,
@@ -11,30 +12,38 @@ import {
   Stack,
   TextField,
   Typography,
-  Alert,
   Divider,
 } from "@mui/material";
 import useCartStore from "../../store/cartStore";
 import useAuthStore from "../../store/authStore";
 import orderService from "../../services/orderService";
-import paymentService from "../../services/paymentService";
-import env from "../../config/env";
+import { startRazorpayCheckout } from "../../utils/razorpayCheckout";
 const Checkout = () => {
   const { cart, fetchCart } = useCartStore(),
     user = useAuthStore((s) => s.user),
     nav = useNavigate();
+  const savedAddress = {
+    name: user?.name || "",
+    phone: user?.phone || "",
+    street: user?.address?.street || "",
+    city: user?.address?.city || "",
+    state: user?.address?.state || "",
+    postalCode: user?.address?.postalCode || "",
+    country: user?.address?.country || "India",
+  };
+  const hasSavedAddress = Boolean(
+    user?.address &&
+      ["street", "city", "state", "postalCode"].some(
+        (field) => user.address[field],
+      ),
+  );
   const [a, setA] = useState({
-      name: user?.name || "",
-      phone: user?.phone || "",
-      street: user?.address?.street || "",
-      city: user?.address?.city || "",
-      state: user?.address?.state || "",
-      postalCode: user?.address?.postalCode || "",
-      country: user?.address?.country || "India",
+      ...savedAddress,
     }),
     [method, setMethod] = useState("Razorpay"),
     [busy, setBusy] = useState(false),
-    [error, setError] = useState("");
+    [error, setError] = useState(""),
+    [pendingOrderId, setPendingOrderId] = useState("");
   useEffect(() => {
     if (!cart) fetchCart().catch(() => {});
   }, [cart, fetchCart]);
@@ -64,37 +73,20 @@ const Checkout = () => {
       });
       const order = r.data;
       if (method === "COD") {
+        await fetchCart().catch(() => {});
         nav(`/order-success?id=${order._id}`);
         return;
       }
-      const payment = await paymentService.createPaymentOrder(order._id);
-      if (!env.razorpayKeyId)
-        throw new Error("VITE_RAZORPAY_KEY_ID is not configured.");
-      if (!window.Razorpay)
-        throw new Error("Razorpay checkout script is not loaded.");
-      const rp = new window.Razorpay({
-        key: env.razorpayKeyId,
-        amount: payment.data.amount,
-        currency: payment.data.currency,
-        name: "ShopSphere",
-        description: `Order ${order._id}`,
-        order_id: payment.data.orderId,
-        prefill: { name: user?.name, email: user?.email },
-        handler: async (response) => {
-          try {
-            await paymentService.verifyPayment({
-              razorpayOrderId: response.razorpay_order_id,
-              razorpayPaymentId: response.razorpay_payment_id,
-              razorpaySignature: response.razorpay_signature,
-              orderId: order._id,
-            });
-            nav(`/order-success?id=${order._id}`);
-          } catch (err) {
-            setError(err.message);
-          }
-        },
-      });
-      rp.open();
+      setPendingOrderId(order._id);
+      const result = await startRazorpayCheckout({ orderId: order._id, user });
+      if (result.status === "paid") {
+        await fetchCart().catch(() => {});
+        nav(`/order-success?id=${order._id}`);
+      } else if (result.status === "dismissed") {
+        setError("Payment was closed. Your cart is saved; you can retry from this order.");
+      } else {
+        setError(result.error?.message || "Payment could not be completed.");
+      }
     } catch (err) {
       setError(err.message);
     } finally {
@@ -111,6 +103,12 @@ const Checkout = () => {
           {error}
         </Alert>
       )}
+      {pendingOrderId && (
+        <Alert severity="info" sx={{ mb: 3 }}>
+          Your order is saved and your cart is still available. Retry payment from{" "}
+          <Link to={`/orders/${pendingOrderId}`}>the order page</Link>.
+        </Alert>
+      )}
       <Box
         component="form"
         onSubmit={submit}
@@ -121,13 +119,40 @@ const Checkout = () => {
         }}
       >
         <Box>
-          <Typography variant="h6" fontWeight={800} mb={2}>
-            Shipping address
-          </Typography>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            alignItems={{ xs: "flex-start", sm: "center" }}
+            justifyContent="space-between"
+            gap={1}
+            sx={{ mb: 2 }}
+          >
+            <Box>
+              <Typography variant="h6" fontWeight={800}>
+                Shipping address
+              </Typography>
+              {hasSavedAddress && (
+                <Typography variant="body2" color="text.secondary">
+                  Saved from your profile
+                </Typography>
+              )}
+            </Box>
+            {hasSavedAddress && (
+              <Button
+                type="button"
+                size="small"
+                onClick={() => setA(savedAddress)}
+              >
+                Use saved address
+              </Button>
+            )}
+          </Stack>
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: "repeat(2,1fr)",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "repeat(2, minmax(0, 1fr))",
+              },
               gap: 2,
             }}
           >
@@ -165,6 +190,11 @@ const Checkout = () => {
               />
             </RadioGroup>
           </FormControl>
+          <Alert severity="info" sx={{ mt: 2 }}>
+            If you close Razorpay before paying, your order stays pending and
+            your cart stays saved. You can retry payment later from My orders.
+            Stock is checked again when payment is confirmed.
+          </Alert>
         </Box>
         <Box
           sx={{
@@ -209,8 +239,13 @@ const Checkout = () => {
               {money(total)}
             </Typography>
           </Stack>
-          <Button type="submit" fullWidth variant="contained" disabled={busy}>
-            {busy ? "Processing…" : "Place order"}
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            disabled={busy || Boolean(pendingOrderId)}
+          >
+            {busy ? "Processing…" : pendingOrderId ? "Order created" : "Place order"}
           </Button>
           <Typography
             variant="caption"

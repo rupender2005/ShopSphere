@@ -1,4 +1,5 @@
 import CommonButton from "../button/button";
+import SafeImage from "../common/SafeImage";
 import styles from "./product.module.css";
 
 function ProductCard({
@@ -10,9 +11,9 @@ function ProductCard({
 }) {
   return (
     <div className={`flex flex-col gap-4 ${styles.container}`}>
-      <img
-        src={data?.image || "https://placehold.co/600x400"}
-        alt="image"
+      <SafeImage
+        src={data?.image}
+        alt={data?.title || "Product"}
         className={`${styles.img}`}
       />
       <h1>{data?.title || "No title"}</h1>

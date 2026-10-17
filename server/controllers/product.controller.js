@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const { Product } = require("../models/product.model");
 const { Category } = require("../models/category.model");
 const { cloudinary } = require("../config/cloudinary");
@@ -33,7 +34,9 @@ const getProducts = async (req, res) => {
       search,
       minPrice,
       maxPrice,
+      minRating,
       featured,
+      sort,
       page = 1,
       limit = 10,
     } = req.query;
@@ -43,7 +46,7 @@ const getProducts = async (req, res) => {
     };
 
     if (category) {
-      filter.category = category;
+      filter.category = new mongoose.Types.ObjectId(category);
     }
 
     if (brand) {
@@ -62,27 +65,61 @@ const getProducts = async (req, res) => {
       ];
     }
 
-    if (minPrice || maxPrice) {
-      filter.price = {};
+    if (minRating !== undefined) {
+      filter.rating = { $gte: Number(minRating) };
+    }
 
-      if (minPrice) {
-        filter.price.$gte = Number(minPrice);
-      }
-
-      if (maxPrice) {
-        filter.price.$lte = Number(maxPrice);
-      }
+    const effectivePrice = { $ifNull: ["$discountPrice", "$price"] };
+    const priceConditions = [];
+    if (minPrice !== undefined) {
+      priceConditions.push({
+        $gte: [effectivePrice, Number(minPrice)],
+      });
+    }
+    if (maxPrice !== undefined) {
+      priceConditions.push({
+        $lte: [effectivePrice, Number(maxPrice)],
+      });
+    }
+    if (priceConditions.length) {
+      filter.$expr = { $and: priceConditions };
     }
 
     const skip = (page - 1) * limit;
+    const sortOptions = {
+      newest: { createdAt: -1 },
+      "price-asc": { effectivePrice: 1 },
+      "price-desc": { effectivePrice: -1 },
+      rating: { rating: -1, numReviews: -1 },
+    };
 
-    const products = await Product.find(filter)
-      .populate("category", "name")
-      .skip(skip)
-      .limit(Number(limit))
-      .sort({ createdAt: -1 });
+    const products = await Product.aggregate([
+      { $match: filter },
+      {
+        $addFields: {
+          effectivePrice,
+        },
+      },
+      { $sort: sortOptions[sort] || sortOptions.newest },
+      { $skip: skip },
+      { $limit: Number(limit) },
+      {
+        $lookup: {
+          from: Category.collection.name,
+          localField: "category",
+          foreignField: "_id",
+          as: "category",
+        },
+      },
+      { $unwind: { path: "$category", preserveNullAndEmptyArrays: true } },
+      { $project: { effectivePrice: 0 } },
+    ]);
 
-    const totalProducts = await Product.countDocuments(filter);
+    const [countResult] = await Product.aggregate([
+      { $match: filter },
+      { $count: "totalProducts" },
+    ]);
+    const totalProducts = countResult?.totalProducts || 0;
 
     return ResponseHandler(res, 200, true, "Products fetched successfully", {
       products,

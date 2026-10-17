@@ -4,6 +4,40 @@ const { getRazorpay } = require("../config/razorpay");
 const { Order } = require("../models/order.model");
 const { ResponseHandler } = require("../utils/responseHandler");
 const { sendOrderConfirmation } = require("../utils/email/sendOrderConfirmation");
+const { completePaidOrder } = require("../utils/completePaidOrder");
+
+const refundCapturedPayment = async (razorpay, payment, orderId, reason) => {
+  const remainingAmount =
+    Number(payment.amount) - Number(payment.amount_refunded || 0);
+
+  if (remainingAmount <= 0) return { status: "processed", id: "" };
+
+  try {
+    const refund = await razorpay.payments.refund(payment.id, {
+      amount: remainingAmount,
+      speed: "normal",
+      notes: { orderId: String(orderId), reason },
+    });
+    return {
+      status: refund.status === "processed" ? "processed" : "pending",
+      id: refund.id || "",
+    };
+  } catch (error) {
+    console.error("Unable to refund captured ShopSphere payment:", error.message);
+    return { status: "failed", id: "" };
+  }
+};
+
+const recordRefundResult = async (order, payment, signature, refund) => {
+  order.razorpayPaymentId = payment.id;
+  order.razorpaySignature = signature;
+  order.razorpayRefundId = refund.id || "";
+  order.paymentStatus =
+    refund.status === "processed" ? "Refunded" : "Refund pending";
+  order.orderStatus = "Cancelled";
+  order.cancelledAt = order.cancelledAt || new Date();
+  await order.save();
+};
 
 // Create Payment Order
 const createPaymentOrder = async (req, res) => {
@@ -36,6 +70,19 @@ const createPaymentOrder = async (req, res) => {
       return ResponseHandler(res, 400, false, "Order is already paid");
     }
 
+    if (
+      order.orderStatus === "Cancelled" ||
+      order.paymentStatus === "Refunded" ||
+      order.paymentStatus === "Refund pending"
+    ) {
+      return ResponseHandler(
+        res,
+        409,
+        false,
+        "This order can no longer accept payment. Start a new order from your cart.",
+      );
+    }
+
     const amount = Math.round(Number(order.totalAmount) * 100);
 
     if (!Number.isFinite(amount) || amount <= 0) {
@@ -55,6 +102,9 @@ const createPaymentOrder = async (req, res) => {
     }
 
     order.razorpayOrderId = razorpayOrder.id;
+    order.razorpayOrderIds = [
+      ...new Set([...(order.razorpayOrderIds || []), razorpayOrder.id]),
+    ];
 
     await order.save();
 
@@ -120,7 +170,11 @@ const verifyPayment = async (req, res) => {
       return ResponseHandler(res, 404, false, "Order not found");
     }
 
-    if (order.razorpayOrderId !== razorpayOrderId) {
+    const knownRazorpayOrderIds = new Set([
+      order.razorpayOrderId,
+      ...(order.razorpayOrderIds || []),
+    ]);
+    if (!knownRazorpayOrderIds.has(razorpayOrderId)) {
       return ResponseHandler(res, 400, false, "Invalid Razorpay order ID");
     }
 
@@ -186,32 +240,159 @@ const verifyPayment = async (req, res) => {
       );
     }
 
-    if (order.paymentStatus === "Paid") {
-      await sendOrderConfirmation(order._id);
+    if (
+      order.paymentStatus === "Refunded" &&
+      order.razorpayPaymentId === razorpayPaymentId
+    ) {
+      return ResponseHandler(res, 409, false, "The payment has already been refunded.");
+    }
+
+    if (
+      order.paymentStatus === "Refund pending" &&
+      order.razorpayPaymentId === razorpayPaymentId &&
+      order.razorpayRefundId
+    ) {
       return ResponseHandler(
         res,
-        400,
+        409,
         false,
-        "Payment has already been verified",
+        "Your refund request is being processed. You do not need to retry payment.",
       );
     }
 
-    order.razorpayPaymentId = razorpayPaymentId;
-    order.razorpaySignature = razorpaySignature;
-    order.paymentStatus = "Paid";
-    order.orderStatus = "Confirmed";
-    order.paidAt = new Date();
+    if (order.paymentStatus === "Paid") {
+      if (order.razorpayPaymentId === razorpayPaymentId) {
+        await sendOrderConfirmation(order._id);
+        return ResponseHandler(
+          res,
+          200,
+          true,
+          "Payment already verified",
+          order,
+        );
+      }
 
-    await order.save();
+      const refund = await refundCapturedPayment(
+        razorpay,
+        payment,
+        order._id,
+        "duplicate_payment",
+      );
+      return ResponseHandler(
+        res,
+        refund.status === "failed" ? 502 : 409,
+        false,
+        refund.status === "processed"
+          ? "A second payment was detected and refunded."
+          : refund.status === "pending"
+            ? "A second payment was detected and its refund is being processed."
+          : "A second payment was detected, but its refund could not be started. Contact support.",
+      );
+    }
 
-    await sendOrderConfirmation(order._id);
+    if (
+      order.orderStatus === "Cancelled" ||
+      order.paymentStatus === "Refunded" ||
+      order.paymentStatus === "Refund pending"
+    ) {
+      const refund = await refundCapturedPayment(
+        razorpay,
+        payment,
+        order._id,
+        "cancelled_order_payment",
+      );
+      await recordRefundResult(order, payment, razorpaySignature, refund);
+      return ResponseHandler(
+        res,
+        refund.status === "failed" ? 502 : 409,
+        false,
+        refund.status === "processed"
+          ? "This order was cancelled. The captured payment has been refunded."
+          : refund.status === "pending"
+            ? "This order was cancelled. The refund request is being processed."
+            : "This order was cancelled and the payment was captured, but the refund could not be started. Contact support.",
+      );
+    }
+
+    let completedOrder;
+    try {
+      completedOrder = await completePaidOrder({
+        orderId: order._id,
+        userId: req.user._id,
+        paymentId: razorpayPaymentId,
+        signature: razorpaySignature,
+      });
+    } catch (completionError) {
+      if (completionError.code === "ORDER_INVENTORY_UNAVAILABLE") {
+        const refund = await refundCapturedPayment(
+          razorpay,
+          payment,
+          order._id,
+          "out_of_stock",
+        );
+        await recordRefundResult(order, payment, razorpaySignature, refund);
+        return ResponseHandler(
+          res,
+          refund.status === "failed" ? 502 : 409,
+          false,
+          refund.status === "processed"
+            ? `${completionError.message} Your payment has been refunded.`
+            : refund.status === "pending"
+              ? `${completionError.message} Your refund request is being processed.`
+              : `${completionError.message} The payment was captured, but the refund could not be started. Contact support.`,
+        );
+      }
+
+      if (completionError.code === "ORDER_CANCELLED") {
+        const refund = await refundCapturedPayment(
+          razorpay,
+          payment,
+          order._id,
+          "cancelled_order_payment",
+        );
+        await recordRefundResult(order, payment, razorpaySignature, refund);
+        return ResponseHandler(
+          res,
+          refund.status === "failed" ? 502 : 409,
+          false,
+          refund.status === "processed"
+            ? "This order was cancelled. The captured payment has been refunded."
+            : refund.status === "pending"
+              ? "This order was cancelled. The refund request is being processed."
+              : "This order was cancelled and the payment was captured, but the refund could not be started. Contact support.",
+        );
+      }
+
+      if (completionError.code === "DUPLICATE_PAYMENT") {
+        const refund = await refundCapturedPayment(
+          razorpay,
+          payment,
+          order._id,
+          "duplicate_payment",
+        );
+        return ResponseHandler(
+          res,
+          refund.status === "failed" ? 502 : 409,
+          false,
+          refund.status === "processed"
+            ? "A second payment was detected and refunded."
+            : refund.status === "pending"
+              ? "A second payment was detected and its refund is being processed."
+            : "A second payment was detected, but its refund could not be started. Contact support.",
+        );
+      }
+
+      throw completionError;
+    }
+
+    await sendOrderConfirmation(completedOrder._id);
 
     return ResponseHandler(
       res,
       200,
       true,
       "Payment verified successfully",
-      order,
+      completedOrder,
     );
   } catch (error) {
     if (error.code === "RAZORPAY_NOT_CONFIGURED") {

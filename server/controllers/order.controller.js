@@ -1,6 +1,7 @@
 const { Order } = require("../models/order.model");
 const { Cart } = require("../models/cart.model");
 const { Product } = require("../models/product.model");
+const { getRazorpay } = require("../config/razorpay");
 const { ResponseHandler } = require("../utils/responseHandler");
 const { sendOrderConfirmation } = require("../utils/email/sendOrderConfirmation");
 
@@ -78,21 +79,24 @@ const createOrder = async (req, res) => {
       taxIncluded: true,
       totalAmount,
       paymentMethod: selectedPaymentMethod,
+      inventoryDeducted: selectedPaymentMethod === "COD",
     });
 
-    for (const item of cart.items) {
-      const product = await Product.findById(item.product._id);
+    if (selectedPaymentMethod === "COD") {
+      for (const item of cart.items) {
+        const product = await Product.findById(item.product._id);
 
-      product.stock -= item.quantity;
+        product.stock -= item.quantity;
 
-      await product.save();
+        await product.save();
+      }
+
+      cart.items = [];
+      cart.totalItems = 0;
+      cart.totalPrice = 0;
+
+      await cart.save();
     }
-
-    cart.items = [];
-    cart.totalItems = 0;
-    cart.totalPrice = 0;
-
-    await cart.save();
 
     const createdOrder = await Order.findById(order._id)
       .populate("user", "name email")
@@ -207,6 +211,7 @@ const cancelOrder = async (req, res) => {
       }
 
       try {
+        const razorpay = getRazorpay();
         await razorpay.payments.refund(order.razorpayPaymentId, {
           amount: Math.round(order.totalAmount * 100),
           speed: "normal",
@@ -226,17 +231,21 @@ const cancelOrder = async (req, res) => {
       order.paymentStatus = "Refunded";
     }
 
-    await order.save();
+    if (order.inventoryDeducted) {
+      for (const item of order.items) {
+        const product = await Product.findById(item.product);
 
-    for (const item of order.items) {
-      const product = await Product.findById(item.product);
+        if (product) {
+          product.stock += item.quantity;
 
-      if (product) {
-        product.stock += item.quantity;
-
-        await product.save();
+          await product.save();
+        }
       }
+
+      order.inventoryDeducted = false;
     }
+
+    await order.save();
 
     return ResponseHandler(
       res,

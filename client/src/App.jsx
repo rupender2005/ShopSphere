@@ -16,6 +16,7 @@ import Home from "./pages/Home";
 import Products from "./pages/product/Products";
 import ProductDetail from "./pages/product/ProductDetail";
 import CategoryProducts from "./pages/category/CategoryProducts";
+import StoreInfo from "./pages/StoreInfo";
 
 // Auth pages
 import Login from "./pages/auth/Login";
@@ -66,6 +67,7 @@ const App = () => {
         <Route path="products" element={<Products />} />
         <Route path="products/:id" element={<ProductDetail />} />
         <Route path="categories/:id" element={<CategoryProducts />} />
+        <Route path="help/:topic" element={<StoreInfo />} />
 
         <Route path="cart" element={<Cart />} />
 

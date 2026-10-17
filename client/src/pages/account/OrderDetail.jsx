@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   Alert,
   Button,
@@ -11,8 +11,10 @@ import {
 } from "@mui/material";
 import orderService from "../../services/orderService";
 import Loader from "../../components/common/Loader";
+import PaymentButton from "../../components/checkout/PaymentButton";
 const OrderDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [o, setO] = useState(null),
     [loading, setLoading] = useState(true),
     [error, setError] = useState("");
@@ -48,6 +50,9 @@ const OrderDetail = () => {
       </Stack>
       <Typography color="text.secondary" my={1}>
         {new Date(o.createdAt).toLocaleString()}
+      </Typography>
+      <Typography color="text.secondary">
+        Payment: {o.paymentMethod} · {o.paymentStatus}
       </Typography>
       <Divider sx={{ my: 3 }} />
       {o.items?.map((i) => (
@@ -107,6 +112,14 @@ const OrderDetail = () => {
         <Button component={Link} to="/orders">
           Back to orders
         </Button>
+        {o.paymentMethod === "Razorpay" &&
+          o.paymentStatus === "Pending" &&
+          o.orderStatus === "Pending" && (
+            <PaymentButton
+              orderId={o._id}
+              onSuccess={() => navigate(`/order-success?id=${o._id}`)}
+            />
+          )}
         {!["Delivered", "Cancelled"].includes(o.orderStatus) && (
           <Button color="error" onClick={cancel}>
             Cancel order

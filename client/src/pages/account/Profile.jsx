@@ -77,8 +77,7 @@ const Profile = () => {
       // intentionally preserved, so the user remains logged in.
       updateUser(updatedUser);
 
-      // Return the user to the storefront after a successful profile update.
-      navigate("/", { replace: true });
+      setMessage("Profile saved. Your checkout address will use these details.");
     } catch (serviceError) {
       setError(serviceError.message || "Failed to update profile");
     } finally {

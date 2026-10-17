@@ -1,16 +1,38 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Box, Container, Paper, Typography } from "@mui/material";
 import adminService from "../../services/adminService";
 import Loader from "../../components/common/Loader";
+import ApiError from "../../components/common/ApiError";
 const Dashboard = () => {
   const [s, setS] = useState(null);
-  useEffect(() => {
-    adminService
-      .getDashboardStats()
-      .then((r) => setS(r.data))
-      .catch(() => {});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const loadDashboard = useCallback(async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const response = await adminService.getDashboardStats();
+      setS(response.data);
+    } catch (requestError) {
+      setError(requestError.message || "Unable to load dashboard statistics.");
+    } finally {
+      setLoading(false);
+    }
   }, []);
-  if (!s) return <Loader />;
+  useEffect(() => {
+    loadDashboard();
+  }, [loadDashboard]);
+  if (loading) return <Loader />;
+  if (error) {
+    return (
+      <Container maxWidth="lg" sx={{ py: 5 }}>
+        <Typography variant="h3" fontWeight={800} mb={4}>
+          Store overview
+        </Typography>
+        <ApiError message={error} onRetry={loadDashboard} />
+      </Container>
+    );
+  }
   const cards = [
     ["Users", s.totalUsers],
     ["Products", s.totalProducts],

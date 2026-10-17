@@ -1,1 +1,138 @@
-import{useState}from"react";import{Box,Button,MenuItem,TextField}from"@mui/material";import productService from"../../services/productService";const ProductForm=({product,categories,onSaved})=>{const[v,setV]=useState({name:product?.name||"",description:product?.description||"",price:product?.price??"",discountPrice:product?.discountPrice??"",stock:product?.stock??0,category:product?.category?._id||product?.category||"",brand:product?.brand||"",isFeatured:product?.isFeatured||false});const[files,setFiles]=useState([]),[busy,setBusy]=useState(false),[error,setError]=useState("");const change=(k,x)=>setV({...v,[k]:x});const submit=async e=>{e.preventDefault();setBusy(true);setError("");try{const fd=new FormData();Object.entries(v).forEach(([k,val])=>{if(val!==""&&val!==null)fd.append(k,val)});[...files].forEach(f=>fd.append("images",f));if(product)await productService.updateProduct(product._id,fd);else await productService.createProduct(fd);onSaved()}catch(e){setError(e.message)}finally{setBusy(false)}};return <Box component="form" onSubmit={submit} sx={{display:"grid",gap:2,py:2}}>{error&&<div>{error}</div>}<TextField label="Name" value={v.name} onChange={e=>change("name",e.target.value)} required/><TextField label="Description" multiline minRows={4} value={v.description} onChange={e=>change("description",e.target.value)} required/><Box sx={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:2}}><TextField label="Price" type="number" value={v.price} onChange={e=>change("price",e.target.value)} required/><TextField label="Discount price" type="number" value={v.discountPrice} onChange={e=>change("discountPrice",e.target.value)}/><TextField label="Stock" type="number" value={v.stock} onChange={e=>change("stock",e.target.value)} required/><TextField select label="Category" value={v.category} onChange={e=>change("category",e.target.value)} required>{categories.map(c=><MenuItem key={c._id} value={c._id}>{c.name}</MenuItem>)}</TextField></Box><TextField label="Brand" value={v.brand} onChange={e=>change("brand",e.target.value)}/><input type="file" accept="image/*" multiple onChange={e=>setFiles(e.target.files)}/><Button type="submit" variant="contained" disabled={busy}>{busy?"Saving…":"Save product"}</Button></Box>};export default ProductForm;
+import { useState } from "react";
+import { Alert, Box, Button, MenuItem, TextField } from "@mui/material";
+import productService from "../../services/productService";
+
+const ProductForm = ({ product, categories, onSaved }) => {
+  const [values, setValues] = useState({
+    name: product?.name || "",
+    description: product?.description || "",
+    price: product?.price ?? "",
+    discountPrice: product?.discountPrice ?? "",
+    stock: product?.stock ?? 0,
+    category: product?.category?._id || product?.category || "",
+    brand: product?.brand || "",
+    isFeatured: product?.isFeatured || false,
+  });
+  const [files, setFiles] = useState([]);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+
+  const updateValue = (name, value) =>
+    setValues((current) => ({ ...current, [name]: value }));
+
+  const submit = async (event) => {
+    event.preventDefault();
+    setBusy(true);
+    setError("");
+    try {
+      const formData = new FormData();
+      Object.entries(values).forEach(([name, value]) => {
+        if (value !== "" && value !== null) formData.append(name, value);
+      });
+      files.forEach((file) => formData.append("images", file));
+
+      if (product) {
+        await productService.updateProduct(product._id, formData);
+      } else {
+        await productService.createProduct(formData);
+      }
+      await onSaved();
+    } catch (requestError) {
+      setError(requestError.message || "Unable to save this product.");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <Box component="form" onSubmit={submit} sx={{ display: "grid", gap: 2, py: 2 }}>
+      {error && <Alert severity="error">{error}</Alert>}
+      <TextField
+        label="Name"
+        value={values.name}
+        onChange={(event) => updateValue("name", event.target.value)}
+        required
+      />
+      <TextField
+        label="Description"
+        multiline
+        minRows={4}
+        value={values.description}
+        onChange={(event) => updateValue("description", event.target.value)}
+        required
+      />
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
+          gap: 2,
+        }}
+      >
+        <TextField
+          label="Price"
+          type="number"
+          value={values.price}
+          onChange={(event) => updateValue("price", event.target.value)}
+          required
+        />
+        <TextField
+          label="Discount price"
+          type="number"
+          value={values.discountPrice}
+          onChange={(event) => updateValue("discountPrice", event.target.value)}
+        />
+        <TextField
+          label="Stock"
+          type="number"
+          value={values.stock}
+          onChange={(event) => updateValue("stock", event.target.value)}
+          required
+        />
+        <TextField
+          select
+          label="Category"
+          value={values.category}
+          onChange={(event) => updateValue("category", event.target.value)}
+          required
+        >
+          {categories.map((category) => (
+            <MenuItem key={category._id} value={category._id}>
+              {category.name}
+            </MenuItem>
+          ))}
+        </TextField>
+      </Box>
+      <TextField
+        label="Brand"
+        value={values.brand}
+        onChange={(event) => updateValue("brand", event.target.value)}
+      />
+      <TextField
+        select
+        label="Featured on home page"
+        value={values.isFeatured ? "true" : "false"}
+        onChange={(event) =>
+          updateValue("isFeatured", event.target.value === "true")
+        }
+      >
+        <MenuItem value="true">Yes</MenuItem>
+        <MenuItem value="false">No</MenuItem>
+      </TextField>
+      <Button component="label" variant="outlined">
+        {files.length ? `${files.length} image(s) selected` : "Choose images"}
+        <input
+          hidden
+          type="file"
+          accept="image/*"
+          multiple
+          onChange={(event) => setFiles(Array.from(event.target.files || []))}
+        />
+      </Button>
+      <Button type="submit" variant="contained" disabled={busy}>
+        {busy ? "Saving product…" : "Save product"}
+      </Button>
+    </Box>
+  );
+};
+
+export default ProductForm;
