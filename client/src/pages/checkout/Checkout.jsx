@@ -48,9 +48,9 @@ const Checkout = () => {
   const marketplaceFee = 5;
   const deliveryFee = subtotal >= 500 ? 0 : 50;
   const codFee = method === "COD" ? 25 : 0;
-  const tax = Number((subtotal * 0.18).toFixed(2));
+  const includedTax = Number(((subtotal * 18) / 118).toFixed(2));
   const total = Number(
-    (subtotal + marketplaceFee + deliveryFee + codFee + tax).toFixed(2),
+    (subtotal + marketplaceFee + deliveryFee + codFee).toFixed(2),
   );
   const money = (amount) => `₹${Number(amount).toFixed(2)}`;
   const submit = async (e) => {
@@ -197,8 +197,8 @@ const Checkout = () => {
             </Stack>
           )}
           <Stack direction="row" justifyContent="space-between" mb={2}>
-            <Typography>GST (18%)</Typography>
-            <Typography>{money(tax)}</Typography>
+            <Typography>GST included in item prices</Typography>
+            <Typography>{money(includedTax)}</Typography>
           </Stack>
           <Divider sx={{ mb: 2 }} />
           <Stack direction="row" justifyContent="space-between" mb={2.5}>
@@ -218,7 +218,7 @@ const Checkout = () => {
             display="block"
             mt={1.5}
           >
-            Delivery is free on items worth ₹500 or more. COD includes a ₹25 handling fee.
+            GST is already included in item prices. Delivery is free on items worth ₹500 or more; COD includes a ₹25 handling fee.
           </Typography>
         </Box>
       </Box>

@@ -80,7 +80,10 @@ const OrderDetail = () => {
           Cash on Delivery fee: ₹{Number(o.codFee).toFixed(2)}
         </Typography>
       )}
-      <Typography>GST: ₹{Number(o.tax).toFixed(2)}</Typography>
+      <Typography>
+        {o.taxIncluded ? "GST included in item prices" : "Tax"}: ₹
+        {Number(o.tax).toFixed(2)}
+      </Typography>
       <Typography variant="h5" fontWeight={800} mt={2}>
         Total: ₹{Number(o.totalAmount).toFixed(2)}
       </Typography>

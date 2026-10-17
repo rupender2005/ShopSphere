@@ -133,6 +133,11 @@ const orderSchema = new mongoose.Schema(
       default: 0,
     },
 
+    taxIncluded: {
+      type: Boolean,
+      default: false,
+    },
+
     totalAmount: {
       type: Number,
       required: true,

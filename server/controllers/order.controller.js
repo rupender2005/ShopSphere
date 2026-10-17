@@ -59,9 +59,10 @@ const createOrder = async (req, res) => {
     const marketplaceFee = 5;
     const selectedPaymentMethod = paymentMethod || "Razorpay";
     const codFee = selectedPaymentMethod === "COD" ? 25 : 0;
-    const tax = Number((subtotal * 0.18).toFixed(2));
+    // Product prices already include GST; store the included portion for display only.
+    const tax = Number(((subtotal * 18) / 118).toFixed(2));
     const totalAmount = Number(
-      (subtotal + shippingFee + marketplaceFee + codFee + tax).toFixed(2),
+      (subtotal + shippingFee + marketplaceFee + codFee).toFixed(2),
     );
 
     const order = await Order.create({
@@ -73,6 +74,7 @@ const createOrder = async (req, res) => {
       marketplaceFee,
       codFee,
       tax,
+      taxIncluded: true,
       totalAmount,
       paymentMethod: selectedPaymentMethod,
     });
