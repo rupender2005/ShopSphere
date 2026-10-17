@@ -2,6 +2,7 @@ const { Order } = require("../models/order.model");
 const { Cart } = require("../models/cart.model");
 const { Product } = require("../models/product.model");
 const { ResponseHandler } = require("../utils/responseHandler");
+const { sendOrderConfirmation } = require("../utils/email/sendOrderConfirmation");
 
 // Create Order
 const createOrder = async (req, res) => {
@@ -96,6 +97,10 @@ const createOrder = async (req, res) => {
     const createdOrder = await Order.findById(order._id)
       .populate("user", "name email")
       .populate("items.product", "name thumbnail");
+
+    if (createdOrder?.paymentMethod === "COD") {
+      await sendOrderConfirmation(createdOrder._id);
+    }
 
     return ResponseHandler(
       res,

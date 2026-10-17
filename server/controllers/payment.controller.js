@@ -3,6 +3,7 @@ const { getRazorpay } = require("../config/razorpay");
 
 const { Order } = require("../models/order.model");
 const { ResponseHandler } = require("../utils/responseHandler");
+const { sendOrderConfirmation } = require("../utils/email/sendOrderConfirmation");
 
 // Create Payment Order
 const createPaymentOrder = async (req, res) => {
@@ -186,6 +187,7 @@ const verifyPayment = async (req, res) => {
     }
 
     if (order.paymentStatus === "Paid") {
+      await sendOrderConfirmation(order._id);
       return ResponseHandler(
         res,
         400,
@@ -201,6 +203,8 @@ const verifyPayment = async (req, res) => {
     order.paidAt = new Date();
 
     await order.save();
+
+    await sendOrderConfirmation(order._id);
 
     return ResponseHandler(
       res,

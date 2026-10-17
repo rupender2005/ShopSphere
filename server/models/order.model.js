@@ -192,6 +192,11 @@ const orderSchema = new mongoose.Schema(
       default: null,
     },
 
+    confirmationEmailSentAt: {
+      type: Date,
+      default: null,
+    },
+
     deliveredAt: {
       type: Date,
       default: null,
